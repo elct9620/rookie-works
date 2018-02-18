@@ -23,5 +23,6 @@ Style/FileName:
   Exclude:
     - Gemfile
     - Guardfile
+    - vendor/paper-kit
 Style/Documentation:
   Enabled: false
