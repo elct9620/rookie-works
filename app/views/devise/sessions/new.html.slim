@@ -1,0 +1,17 @@
+.row
+  .col-md-4.col-sm-6.ml-auto.mr-auto
+    .card.card-register
+      h3.card-title Welcome
+      = form_for(resource, as: resource_name, url: session_path(resource_name), class: 'registr-form' ) do |f|
+        = f.label :email
+        = f.email_field :email, autofocus: true, placeholder: 'Email', autocomplete: "email", class: 'form-control'
+
+        = f.label :password
+        = f.password_field :password, placeholder: 'Password', autocomplete: "off", class: 'form-control'
+        - if devise_mapping.rememberable?
+          .form-check
+            = f.label :remember_me, class: 'form-check-label'
+              = f.check_box :remember_me, class: 'form-check-input'
+              | Remember me
+              span.form-check-sign
+        = f.submit "Log in", class: 'btn btn-danger btn-block btn-round'
