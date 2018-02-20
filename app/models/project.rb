@@ -5,7 +5,9 @@ class Project < ApplicationRecord
   belongs_to :school
   belongs_to :user
 
-  validates :name, :description, :exhibition_year, presence: true
+  mount_uploader :thumbnail, ThumbnailUploader
+
+  validates :name, :description, :exhibition_year, :thumbnail, presence: true
   validates :department, inclusion: { in: ->(p) { p.school.departments } }
 
   # TODO: Add all support years

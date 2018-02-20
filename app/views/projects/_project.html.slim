@@ -1,0 +1,8 @@
+.col-md-6
+  .project
+    = image_tag project.thumbnail_url
+    = link_to '#', class: 'over-area'
+      .content
+        label.label.label-danger.label-fill = project.department.name
+        h2 = project.name
+        p = project.description

@@ -24,6 +24,7 @@ gem 'slim-rails'
 
 # Assets
 gem 'carrierwave'
+gem 'mini_magick'
 
 # Authenticate
 gem 'devise'

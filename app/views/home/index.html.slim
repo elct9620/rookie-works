@@ -10,6 +10,9 @@ section.section.section-header
       .separator-container
         .separator.line-separator ♦
       h5 Explore new designer works in this year graduate projects.
-  = link_to '', data: { scroll: 'true', id: '#works' }, class: 'scroll-arrow hidden-xs hidden-sm'
+  = link_to '', data: { scroll: 'true', id: '#projects' }, class: 'scroll-arrow hidden-xs hidden-sm'
     i.fa.fa-angle-down
-#works.section
+#projects.section
+  .container
+    .row
+      = render @projects
