@@ -1,25 +1,2 @@
 @import 'bootstrap';
-@import 'paper-kit';
-
-body {
-  font-size: 14px;
-}
-
-.full-screen.login {
-  .card-register {
-    background: $white-color;
-    color: $font-color;
-
-    .form-check {
-      padding-left: 0;
-    }
-  }
-}
-
-.login-footer {
-  bottom: 10px;
-  color: #fff;
-  position: absolute;
-  z-index: 3;
-  width: 100%;
-}
+@import 'gaia';

@@ -18,10 +18,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 
 # Front-end
-gem 'bootstrap', '~> 4.0.0'
-gem 'bootstrap_form',
-    git: 'https://github.com/bootstrap-ruby/bootstrap_form.git',
-    branch: 'master'
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap_form', '~> 2.7'
 gem 'slim-rails'
 
 # Assets

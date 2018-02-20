@@ -12,29 +12,9 @@
 //
 //= require rails-ujs
 //= require turbolinks
-// Paper-Kit
-// -- Core --
-//= require jquery-3.2.1.min.js
-//= require jquery-ui-1.12.1.custom.min.js
-//= require popper.js
-//= require bootstrap.min.js
-// -- Switches --
-//= require bootstrap-switch.min.js
-// --  Plugins for Slider --
-//= require nouislider.js
-// --  Photoswipe files --
-//= require photo_swipe/photoswipe.min.js
-//= require photo_swipe/photoswipe-ui-default.min.js
-//= require photo_swipe/init-gallery.js
-// --  Plugins for Select --
-//= require bootstrap-select.js
-// --  for fileupload --
-//= require jasny-bootstrap.min.js
-// --  Plugins for Tags --
-//= require bootstrap-tagsinput.js
-// --  Plugins for DateTimePicker --
-//= require moment.min.js
-//= require bootstrap-datetimepicker.min.js
-//
-//= require paper-kit.js
+// Giga
+//= require jquery.min
+//= require bootstrap
+//= require modernizr
+//= require gaia
 //= require_tree .
