@@ -10,10 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180218164125) do
+ActiveRecord::Schema.define(version: 20180220165229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "departments", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "school_id"
+    t.bigint "department_id"
+    t.string "website"
+    t.string "thumbnail"
+    t.integer "exhibition_year"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["department_id"], name: "index_projects_on_department_id"
+    t.index ["school_id"], name: "index_projects_on_school_id"
+    t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schools_departments", force: :cascade do |t|
+    t.bigint "school_id"
+    t.bigint "department_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["department_id"], name: "index_schools_departments_on_department_id"
+    t.index ["school_id"], name: "index_schools_departments_on_school_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +69,7 @@ ActiveRecord::Schema.define(version: 20180218164125) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "projects", "departments"
+  add_foreign_key "projects", "schools"
+  add_foreign_key "projects", "users"
 end
