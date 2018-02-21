@@ -16,5 +16,4 @@
 //= require jquery.min
 //= require bootstrap
 //= require modernizr
-//= require gaia
 //= require_tree .

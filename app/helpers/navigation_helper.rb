@@ -14,4 +14,19 @@ module NavigationHelper
       nav_link 'Sign in', new_user_session_path
     end
   end
+
+  def nav_wrapper(&block)
+    style = %w[navbar navbar-default navbar-fixed-top]
+    options = {}
+    if transparent_nav?
+      style << 'navbar-transparent'
+      options['color-on-scroll'] = 40
+    end
+
+    content_tag :nav, options.merge(class: style), &block
+  end
+
+  def transparent_nav?
+    content_for(:nontransparent_nav).nil?
+  end
 end
