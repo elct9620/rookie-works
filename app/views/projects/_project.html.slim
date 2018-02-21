@@ -1,22 +1,21 @@
 / TODO: Add helper to switch between home/project
-- if params[:controller] == 'home'
-  .col-md-6
-    .project
-      = image_tag project.thumbnail_url
-      = link_to '#', class: 'over-area'
-        .content
-          label.label.label-danger.label-fill = project.department.name
-          h2 = project.name
-          p = project.description
-- else
-  .col-md-4
-    .card.card-blog
-      = link_to edit_project_path(project), class: 'header' do
-        = image_tag project.thumbnail_url, class: 'image-header'
-      .content
+.col-md-4
+  .card.card-blog
+    = link_to project.website, class: 'header' do
+      = image_tag project.thumbnail_url, class: 'image-header'
+    .content
+      .circle-black
+        .circle
+          .date-wrapper
+            / TODO: Add category field
+            span.month GAME
+            span.date = project.exhibition_year
+      = link_to project.website, class: 'card-title'
         h3 = project.name
+      h6.card-category.text-warning = "#{project.school.name} #{project.department.name}"
+      p.card-description.text-gray = project.description
+      - if params[:controller] == 'projects'
         .line-divider.line-danger
         = link_to 'Edit', edit_project_path(project), class: 'btn btn-small btn-info btn-fill'
         | &nbsp;
         = link_to 'Destroy', project_path(project), class: 'btn btn-small btn-danger btn-fill', method: :delete
-
