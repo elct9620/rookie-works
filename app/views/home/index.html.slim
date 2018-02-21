@@ -1,17 +1,10 @@
-section.section.section-header
+section.section.section-header.section-header-small
   .parallax.filter.filter-color-black
-    .image[style="background-image: url('https://images.unsplash.com/photo-1449247613801-ab06418e2861?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=bb80a15068b7e5da425b33750319daaa')"]
+    .image[style="background-image: url('#{image_path('header-12.jpg')}')"]
   .container
     .content
-      p
-        span by
-        | &nbsp;Aotokitsuruya
-      h1.title-modern Designer Newbie
-      .separator-container
-        .separator.line-separator ♦
-      h5 Explore new designer works in this year graduate projects.
-  = link_to '', data: { scroll: 'true', id: '#projects' }, class: 'scroll-arrow hidden-xs hidden-sm'
-    i.fa.fa-angle-down
+      h1 Designer Newbie
+      h3.subtitle Explore new designer works in this year graduate projects.
 #projects.section
   .container
     .row
