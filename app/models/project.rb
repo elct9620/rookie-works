@@ -12,6 +12,6 @@ class Project < ApplicationRecord
 
   # TODO: Add all support years
   enum exhibition_year: {
-    2018 => 2018
+    '2018' => 2018
   }
 end
