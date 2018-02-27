@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180220165229) do
+ActiveRecord::Schema.define(version: 20180227124811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,22 @@ ActiveRecord::Schema.define(version: 20180220165229) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "exhibitions", force: :cascade do |t|
+    t.string "name"
+    t.integer "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "exhibitions_projects", force: :cascade do |t|
+    t.bigint "exhibition_id"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exhibition_id"], name: "index_exhibitions_projects_on_exhibition_id"
+    t.index ["project_id"], name: "index_exhibitions_projects_on_project_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -28,7 +44,6 @@ ActiveRecord::Schema.define(version: 20180220165229) do
     t.bigint "department_id"
     t.string "website"
     t.string "thumbnail"
-    t.integer "exhibition_year"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

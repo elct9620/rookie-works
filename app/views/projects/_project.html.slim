@@ -4,16 +4,16 @@
     = link_to project.website, class: 'header' do
       = image_tag project.thumbnail_url, class: 'image-header'
     .content
-      .circle-black
-        .circle
-          .date-wrapper
-            / TODO: Add category field
-            span.month GAME
-            span.date = project.exhibition_year
+      / .circle-black
+      /   .circle
+      /     .date-wrapper
+      /       / TODO: Add category field
+      /       span.month GAME
+      /       span.date = project.exhibition_year
       = link_to project.website, class: 'card-title'
         h3 = project.name
       h6.card-category.text-warning = "#{project.school.name} #{project.department.name}"
-      p.card-description.text-gray = project.description
+      / p.card-description.text-gray = truncate(project.description, length: 100)
       - if params[:controller] == 'projects'
         .line-divider.line-danger
         = link_to 'Edit', edit_project_path(project), class: 'btn btn-small btn-info btn-fill'
