@@ -25,13 +25,16 @@ class ThumbnailUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
-  process resize_to_fill: [860, 520]
+  process resize_to_fill: [1312, 814]
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #
   # def scale(width, height)
   #   # do something
   # end
+  version :medium do
+    process resize_to_fill: [860, 520]
+  end
 
   # Create different versions of your uploaded files:
   # version :thumb do

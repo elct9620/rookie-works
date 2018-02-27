@@ -10,6 +10,6 @@ class Project < ApplicationRecord
 
   mount_uploader :thumbnail, ThumbnailUploader
 
-  validates :name, :description, :exhibition_year, :thumbnail, presence: true
+  validates :name, :description, :thumbnail, presence: true
   validates :department, inclusion: { in: ->(p) { p.school.departments } }
 end

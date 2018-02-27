@@ -1,8 +1,8 @@
 / TODO: Add helper to switch between home/project
 .col-md-4
   .card.card-blog
-    = link_to project.website, class: 'header' do
-      = image_tag project.thumbnail_url, class: 'image-header'
+    = link_to project, class: 'header' do
+      = image_tag project.thumbnail_url(:medium), class: 'image-header'
     .content
       / .circle-black
       /   .circle
@@ -10,7 +10,7 @@
       /       / TODO: Add category field
       /       span.month GAME
       /       span.date = project.exhibition_year
-      = link_to project.website, class: 'card-title'
+      = link_to project, class: 'card-title'
         h3 = project.name
       h6.card-category.text-warning = "#{project.school.name} #{project.department.name}"
       / p.card-description.text-gray = truncate(project.description, length: 100)

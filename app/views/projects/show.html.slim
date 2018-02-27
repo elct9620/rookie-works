@@ -1,0 +1,30 @@
+- content_for :background, @project.thumbnail_url
+- content_for :title, @project.name
+
+section.section.section-header-blog
+  .parallax.filter.filter-color-black
+    .image[style="background-image: url('#{content_for :background}')"]
+  .container
+    .content
+      h1 = content_for :title
+.section
+  .container
+    .row
+      .col-md-8
+        .content-blog
+          = @project.description
+      .col-md-3.col-md-offset-1.text-center
+        h3.social-title School
+        p = @project.school.name
+        h3.social-title Department
+        p = @project.department.name
+        h3.social-title Exhibitions
+        - @project.exhibitions.each do |exhibition|
+          p
+            span.label.label-fill.label-danger = exhibition.year
+            | &nbsp;
+            = exhibition.name
+        h3.social-title Links
+        .social-buttons-blog-posts
+          = link_to @project.website, class: 'btn btn-social btn-simple btn-padding' do
+            i.fa.fa-home
