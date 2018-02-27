@@ -4,6 +4,7 @@
     = f.text_area :description, class: 'form-control-plain', rows: 4
     = f.select :school_id, School.all.collect { |s| [s.name, s.id] }, label: 'School'
     = f.select :department_id, Department.all.collect { |d| [d.name, d.id] }, label: 'Department'
+    = f.collection_check_boxes :exhibition_ids, Exhibition.all, :id, :name
     = f.text_field :website, class: 'form-control-plain'
     = f.file_field :thumbnail
     .col-md-2.col-md-offset-5

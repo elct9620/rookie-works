@@ -41,7 +41,7 @@ class ProjectsController < ApplicationController
       .require(:project)
       .permit(
         :name, :description, :school_id,
-        :department_id, :website, :thumbnail
+        :department_id, :website, :thumbnail, exhibition_ids: []
       )
   end
 end
