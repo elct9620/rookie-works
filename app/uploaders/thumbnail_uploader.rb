@@ -51,6 +51,7 @@ class ThumbnailUploader < CarrierWave::Uploader::Base
   # Avoid using model.id or version_name here,
   # see uploader/store.rb for details.
   def filename
+    return if original_filename.blank?
     ext = original_filename.split('.').last
     "thumbnail.#{ext}"
   end
