@@ -5,4 +5,8 @@ class Exhibition < ApplicationRecord
   has_many :projects, through: :exhibitions_projects
 
   validates :name, :year, presence: true
+
+  def name_with_year
+    "(#{year}) #{name}"
+  end
 end

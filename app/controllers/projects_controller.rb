@@ -1,11 +1,15 @@
 # frozen_string_literal: true
 
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :find_project, except: %i[index new create]
+  before_action :authenticate_user!, except: %i[show]
+  before_action :find_project, except: %i[index new create show]
 
   def index
     @projects = Project.where(user: current_user)
+  end
+
+  def show
+    @project = Project.find(params[:id])
   end
 
   def new
