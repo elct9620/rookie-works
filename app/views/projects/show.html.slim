@@ -14,17 +14,13 @@ section.section.section-header-blog
         .content-blog
           = @project.description
       .col-md-3.col-md-offset-1.text-center
-        h3.social-title School
+        h3.social-title = t('.school')
         p = @project.school.name
-        h3.social-title Department
+        h3.social-title = t('.department')
         p = @project.department.name
-        h3.social-title Exhibitions
-        - @project.exhibitions.each do |exhibition|
-          p
-            span.label.label-fill.label-danger = exhibition.year
-            | &nbsp;
-            = exhibition.name
-        h3.social-title Links
+        h3.social-title = t('.exhibitions')
+        = render(partial: 'exhibition', collection: @project.exhibitions) || content_tag(:p, t('.none'))
+        h3.social-title = t('.links')
         .social-buttons-blog-posts
           = link_to @project.website, class: 'btn btn-social btn-simple btn-padding' do
             i.fa.fa-home

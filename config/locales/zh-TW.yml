@@ -13,11 +13,26 @@ zh-TW:
       about_this_site: 目前網站還在開發中，還有許多功能會陸續上線。
       projects: 作品列表
   projects:
+    index:
+      page_name: 我的作品
+      description: 以下是你發表的作品
+    show:
+      school: 學校
+      department: 科系
+      exhibitions: 展覽
+      links: 相關連結
+      none: 無
     new:
       submit_project: 發表作品
       description: 目前還有許多欄位尚未實裝，送出後還可以編輯請不用擔心
+    edit:
+      edit_project: 編輯作品
+      description: 目前還有許多欄位尚未實裝，偶爾可以回來看看有沒有資料可以補充
     form:
       submit: 送出
+    project:
+      edit: 編輯
+      destroy: 刪除
   devise:
     sessions:
       new:
