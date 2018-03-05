@@ -31,6 +31,9 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+# Admin
+gem 'activeadmin'
+
 # Deployment
 gem 'capistrano-rails', group: :development
 
