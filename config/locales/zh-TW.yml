@@ -1,5 +1,11 @@
 zh-TW:
   site_name: 新人設計師
+  shared:
+    nav:
+      submit: 發表作品
+      projects: 我的作品
+      signin: 登入
+      signup: 註冊
   projects:
     new:
       submit_project: 發表作品

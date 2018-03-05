@@ -9,9 +9,12 @@ module NavigationHelper
 
   def user_projects_link
     if user_signed_in?
-      nav_link 'My Projects', projects_path
+      nav_link t('shared.nav.projects'), projects_path
     else
-      nav_link 'Sign in', new_user_session_path
+      capture do
+        concat nav_link t('shared.nav.signin'), new_user_session_path
+        concat nav_link t('shared.nav.signup'), new_user_registration_path
+      end
     end
   end
 

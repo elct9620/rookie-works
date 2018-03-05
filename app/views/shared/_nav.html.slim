@@ -7,8 +7,8 @@
         span.icon-bar.bar1
         span.icon-bar.bar2
         span.icon-bar.bar3
-      = link_to 'Rookie Designer', root_path, class: 'navbar-brand'
+      = link_to t('site_name'), root_path, class: 'navbar-brand'
     .collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right.navbar-uppercase
         = user_projects_link
-        = nav_link 'Submit', new_project_path, class: 'btn btn-danger btn-fill'
+        = nav_link t('.submit'), new_project_path, class: 'btn btn-danger btn-fill'
