@@ -1,0 +1,24 @@
+zh-TW:
+  site_name: 新人設計師
+  projects:
+    new:
+      submit_project: 發表作品
+      description: 目前還有許多欄位尚未實裝，送出後還可以編輯請不用擔心
+    form:
+      submit: 送出
+  activerecord:
+    models:
+      project: 作品
+    attributes:
+      project:
+        name: 作品名稱
+        description: 作品介紹
+        school_id: 學校
+        department_id: 科系
+        exhibition_ids: 參加展覽
+        website: 網站
+        thumbnail: 美術圖
+    help:
+      project:
+        school_id: 學校或科系找不到時請聯絡管理員新增
+        thumbnail: 建議上傳 860 x 520 以上的圖片已獲得最佳顯示效果

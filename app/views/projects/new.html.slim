@@ -3,9 +3,9 @@
   section.section.section-contact-form
     .container
       .title-area
-        h2 Submit Project
+        h2 = t('.submit_project')
         .separator.separator-danger ✻
-        p.description The thumbnail is golden ration, please upload size bigger than 860px x 520px
+        p.description = t('.description')
       .row
         .col-md-8.col-md-offset-2
          = render 'form'
