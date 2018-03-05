@@ -8,4 +8,9 @@ module ApplicationHelper
     end
     true
   end
+
+  def page_title
+    page_name = content_for(:page_name)
+    [page_name, t('site_name')].compact.join(' | ')
+  end
 end
