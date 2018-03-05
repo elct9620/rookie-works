@@ -18,10 +18,30 @@ zh-TW:
       description: 目前還有許多欄位尚未實裝，送出後還可以編輯請不用擔心
     form:
       submit: 送出
+  devise:
+    sessions:
+      new:
+        welcome: 歡迎
+        email: 信箱
+        password: 密碼
+        signin: 登入
+        signup: 註冊
+        signup_help: "還沒有帳號嗎？ "
+    registrations:
+      new:
+        signup: 註冊
+        email: 信箱
+        password: 密碼
+        password_confirmation: 確認密碼
+        signin_help: 或是登入已經註冊的
+        account: 帳號
   activerecord:
     models:
       project: 作品
     attributes:
+      user:
+        email: 信箱
+        password: 密碼
       project:
         name: 作品名稱
         description: 作品介紹
