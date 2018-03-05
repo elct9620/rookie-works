@@ -6,6 +6,12 @@ zh-TW:
       projects: 我的作品
       signin: 登入
       signup: 註冊
+  home:
+    index:
+      description: 瀏覽今年設計科系畢業生作品
+      about: 關於這個網站
+      about_this_site: 目前網站還在開發中，還有許多功能會陸續上線。
+      projects: 作品列表
   projects:
     new:
       submit_project: 發表作品
