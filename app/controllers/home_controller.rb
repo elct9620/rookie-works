@@ -2,6 +2,6 @@
 
 class HomeController < ApplicationController
   def index
-    @projects = Project.all
+    @projects = Project.all.includes(:school, :department)
   end
 end

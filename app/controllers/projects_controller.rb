@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   before_action :find_project, except: %i[index new create show]
 
   def index
-    @projects = Project.where(user: current_user)
+    @projects = current_user.projects.includes(:school, :department)
   end
 
   def show
