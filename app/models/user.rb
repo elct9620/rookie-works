@@ -7,4 +7,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :projects, dependent: :destroy
+
+  def name
+    email.split('@').first
+  end
 end
