@@ -18,6 +18,17 @@
           h2 = t('.projects')
           .separator.separator-danger ✻
     .row
+      .col-md-12
+        = search_form_for @q, url: root_path do |f|
+          .form-group
+            = f.collection_select :school_id_in, School.all, :id, :name, { include_blank: true }, { multiple: true, class: 'select2', 'data-placeholder': t('.school') }
+          .form-group
+            = f.collection_select :department_id_in, Department.all, :id, :name, { include_blank: true }, { multiple: true, class: 'select2', 'data-placeholder': t('.department') }
+          .form-group
+            = f.collection_select :exhibitions_id_in, Exhibition.all, :id, :name_with_year, { include_blank: true }, { multiple: true, class: 'select2', 'data-placeholder': t('.exhibition') }
+          .form-group
+            = f.submit class: 'btn btn-primary'
+    .row
       = render @projects
     .row
       .col-md-12.text-center

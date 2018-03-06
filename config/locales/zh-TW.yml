@@ -14,6 +14,9 @@ zh-TW:
       about: 關於這個網站
       about_this_site: 目前網站還在開發中，還有許多功能會陸續上線。
       projects: 作品列表
+      school:  篩選學校
+      department: 篩選科系
+      exhibition: 篩選展覽
   projects:
     index:
       page_name: 我的作品

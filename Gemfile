@@ -20,6 +20,8 @@ gem 'webpacker'
 # Front-end
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'bootstrap_form', '~> 2.7'
+gem 'jquery-rails'
+gem 'select2-rails', '~> 4.0.3'
 gem 'slim-rails'
 
 # Assets
@@ -40,6 +42,7 @@ gem 'capistrano-rails', group: :development
 # Misc
 gem 'kaminari'
 gem 'rails-i18n'
+gem 'ransack'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

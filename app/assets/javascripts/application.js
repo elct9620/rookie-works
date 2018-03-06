@@ -13,7 +13,12 @@
 //= require rails-ujs
 //= require turbolinks
 // Giga
-//= require jquery.min
+//= require jquery
 //= require bootstrap
 //= require modernizr
-//= require_tree .
+// 3rd-party
+//= require select2
+
+$(document).on('turbolinks:load', function() {
+  $('.select2').select2({ theme: 'bootstrap' });
+});
