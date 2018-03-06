@@ -38,6 +38,7 @@ gem 'activeadmin'
 gem 'capistrano-rails', group: :development
 
 # Misc
+gem 'kaminari'
 gem 'rails-i18n'
 
 group :development, :test do

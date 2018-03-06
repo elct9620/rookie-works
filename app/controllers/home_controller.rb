@@ -2,6 +2,10 @@
 
 class HomeController < ApplicationController
   def index
-    @projects = Project.all.includes(:school, :department)
+    @projects =
+      Project
+      .includes(:school, :department)
+      .page(params[:page])
+      .per(50) # TODO: Let it changable
   end
 end

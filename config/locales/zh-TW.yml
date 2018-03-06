@@ -52,6 +52,13 @@ zh-TW:
         password_confirmation: 確認密碼
         signin_help: 或是登入已經註冊的
         account: 帳號
+  views:
+    pagination:
+      first: 第一頁
+      last: 最末頁
+      previous: 上一頁
+      next: 下一頁
+      truncate: "&hellip;"
   activerecord:
     models:
       project: 作品
