@@ -2,9 +2,10 @@
 
 @mixin opacity($opacity) {
   opacity: $opacity;
+  /
   // IE8 filter
-  $opacity-ie: ($opacity * 100);
-  filter: #{alpha(opacity=$opacity-ie)};
+  // $opacity-ie: ($opacity * 100);
+  // filter: #{alpha(opacity=$opacity-ie)};
 }
 
 @mixin black-filter($opacity){
@@ -16,5 +17,5 @@
     background-color: rgba(17,17,17,$opacity);
     display: block;
     content: "";
-    z-index: 1; 
+    z-index: 1;
 }
