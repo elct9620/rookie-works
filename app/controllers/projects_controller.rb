@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
       current_user
       .projects
       .includes(:school, :department)
-      .page(params[:page])
+      .page(current_page)
   end
 
   def show

@@ -9,7 +9,7 @@ class HomeController < ApplicationController
       @q
       .result(distinct: true)
       .includes(:school, :department)
-      .page(params[:page])
+      .page(current_page)
       .per(50) # TODO: Let it changable
   end
 end
