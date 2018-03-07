@@ -15,7 +15,7 @@ gem 'rails', '~> 5.1.5'
 gem 'sassc-rails'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
-# gem 'webpacker'
+gem 'webpacker'
 
 # Front-end
 gem 'bootstrap-sass', '~> 3.3.7'
