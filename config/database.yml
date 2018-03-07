@@ -81,5 +81,4 @@ test:
 production:
   <<: *default
   database: newbie_designer_production
-  username: newbie_designer
   password: <%= ENV['NEWBIE_DESIGNER_DATABASE_PASSWORD'] %>

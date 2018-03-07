@@ -36,9 +36,6 @@ gem 'omniauth-facebook'
 # Admin
 gem 'activeadmin'
 
-# Deployment
-gem 'capistrano-rails', group: :development
-
 # Misc
 gem 'kaminari'
 gem 'rails-i18n'
@@ -67,6 +64,10 @@ group :development do
 
   # Console
   gem 'pry-rails'
+
+  # Deployment
+  gem 'capistrano-passenger'
+  gem 'capistrano-rails'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
