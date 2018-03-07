@@ -41,6 +41,10 @@ gem 'kaminari'
 gem 'rails-i18n'
 gem 'ransack'
 
+group :production do
+  gem 'passenger', '~> 5.2.1'
+end
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
