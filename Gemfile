@@ -41,6 +41,7 @@ gem 'kaminari'
 gem 'rails-i18n'
 gem 'ransack'
 gem 'sitemap_generator'
+gem 'whenever', require: false
 
 group :production do
   gem 'passenger', '~> 5.2.1'
