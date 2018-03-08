@@ -13,7 +13,7 @@
 //= require rails-ujs
 //= require turbolinks
 // Giga
-//= require jquery
+//= require jquery3
 //= require bootstrap
 //= require modernizr
 // 3rd-party
