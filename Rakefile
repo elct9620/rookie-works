@@ -5,5 +5,6 @@
 # and they will automatically be available to Rake.
 
 require_relative 'config/application'
+require 'sitemap_generator/tasks'
 
 Rails.application.load_tasks

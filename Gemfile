@@ -40,6 +40,7 @@ gem 'activeadmin'
 gem 'kaminari'
 gem 'rails-i18n'
 gem 'ransack'
+gem 'sitemap_generator'
 
 group :production do
   gem 'passenger', '~> 5.2.1'
