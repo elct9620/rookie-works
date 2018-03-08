@@ -1,12 +1,12 @@
-- content_for :background, @project.thumbnail_url
-- content_for :title, @project.name
+- content_for :page_name, @project.name
+- content_for :page_description, @project.description
 
 section.section.section-header-blog
   .parallax.filter.filter-color-black
-    .image[style="background-image: url('#{content_for :background}')"]
+    .image[style="background-image: url('#{@project.thumbnail_url}')"]
   .container
     .content
-      h1 = content_for :title
+      h1 = @project.name
 .section
   .container
     .row
