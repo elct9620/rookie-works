@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register Project do
-  permit_params :name, :description, :school, :department, :website, :video
+  permit_params :name, :description, :school_id, :department_id,
+                :website, :video
 
   index do
     selectable_column
