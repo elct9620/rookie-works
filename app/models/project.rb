@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 class Project < ApplicationRecord
-  VIDEO_FORMAT = %r{
-  http[s]?+:\/\/(?:(www|player)\.)?(youtu(be)?|vimeo)(?:\.(be|com))
-  }
+  VIDEO_FORMAT =
+    %r{\Ahttp[s]?+:\/\/(?:(www|player)\.)?(youtu(be)?|vimeo)(?:\.(be|com)).+\z}
 
   belongs_to :department
   belongs_to :school
