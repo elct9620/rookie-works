@@ -6,6 +6,7 @@
     = f.select :department_id, Department.all.collect { |d| [d.name, d.id] }
     = f.collection_check_boxes :exhibition_ids, Exhibition.all, :id, :name_with_year
     = f.text_field :website, class: 'form-control-plain'
+    = f.text_field :video, class: 'form-control-plain'
     = f.file_field :thumbnail
     .col-md-2.col-md-offset-5
       = f.submit t('.submit'), class: 'btn btn-danger btn-fill'
