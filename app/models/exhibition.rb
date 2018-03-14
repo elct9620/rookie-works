@@ -9,6 +9,6 @@ class Exhibition < ApplicationRecord
   mount_uploader :plan_image, PlanImageUploader
 
   def name_with_year
-    "(#{year}) #{name}"
+    "#{year} - #{name}"
   end
 end

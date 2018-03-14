@@ -38,6 +38,10 @@ zh-TW:
     project:
       edit: 編輯
       destroy: 刪除
+  exhibitions:
+    show:
+      plan_image: 展場平面圖
+      projects: 參展作品
   devise:
     sessions:
       new:

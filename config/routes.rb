@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :projects
+  resources :exhibitions, only: %i[show]
 end
