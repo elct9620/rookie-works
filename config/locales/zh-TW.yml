@@ -77,11 +77,18 @@ zh-TW:
         name: 作品名稱
         description: 作品介紹
         school_id: 學校
+        department: 科系
         department_id: 科系
         exhibition_ids: 參加展覽
         website: 網站
         thumbnail: 美術圖
         video: 影片
+    errors:
+      models:
+        project:
+          attributes:
+            department:
+              inclusion: 並不存在於該學校
     help:
       project:
         school_id: 學校或科系找不到時請聯絡管理員新增

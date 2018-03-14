@@ -1,9 +1,10 @@
 .contact-form
   = bootstrap_form_for(@project) do |f|
+    = f.errors_on :department
     = f.text_field :name, class: 'form-control-plain', autofocus: true
     = f.text_area :description, class: 'form-control-plain', rows: 4
-    = f.select :school_id, School.all.collect { |s| [s.name, s.id] }
-    = f.select :department_id, Department.all.collect { |d| [d.name, d.id] }
+    = f.collection_select :school_id, School.all, :id, :name
+    = f.collection_select :department_id, Department.all, :id, :name
     = f.collection_check_boxes :exhibition_ids, Exhibition.all, :id, :name_with_year
     = f.text_field :website, class: 'form-control-plain'
     = f.text_field :video, class: 'form-control-plain'
