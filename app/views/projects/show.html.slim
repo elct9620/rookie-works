@@ -14,7 +14,7 @@ section.section.section-header-blog
         .content-blog
           - if @project.video.present?
             p = render @project.video_type.to_s
-          p = @project.description
+          = simple_format  @project.description
       .col-md-3.col-md-offset-1.text-center
         h3.social-title = t('.school')
         p = @project.school.name
