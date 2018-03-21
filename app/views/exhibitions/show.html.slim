@@ -1,8 +1,11 @@
+- keyword @exhibition.name
+- keyword t('keyword.graduation_project')
+- keyword t('keyword.designer')
 - content_for :page_name, @exhibition.name_with_year
-- content_for :page_description, @exhibition.name
+- content_for :page_description, t('.description', year: @exhibition.year, name: @exhibition.name)
 - content_for :background, image_path('header-4.jpg')
 - content_for :title, @exhibition.name_with_year
-- content_for :subtitle, @exhibition.name
+- content_for :subtitle,  t('.description', year: @exhibition.year, name: @exhibition.name)
 
 = render 'shared/page_header'
 - if @exhibition.plan_image.present?

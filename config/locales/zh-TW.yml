@@ -1,5 +1,8 @@
 zh-TW:
   site_name: 新人設計師
+  keyword:
+    graduation_project: 畢業製作
+    designer: 設計師
   shared:
     nav:
       submit: 發表作品
@@ -42,6 +45,7 @@ zh-TW:
     show:
       plan_image: 展場平面圖
       projects: 參展作品
+      description: 查詢與瀏覽 %{year} 年參與 %{name} 的畢業專題或學生作品。
   devise:
     sessions:
       new:
