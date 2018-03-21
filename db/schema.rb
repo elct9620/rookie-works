@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314072316) do
+ActiveRecord::Schema.define(version: 20180321063041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,14 @@ ActiveRecord::Schema.define(version: 20180314072316) do
     t.datetime "updated_at", null: false
     t.index ["exhibition_id"], name: "index_exhibitions_projects_on_exhibition_id"
     t.index ["project_id"], name: "index_exhibitions_projects_on_project_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.bit "platform", limit: 8, default: "00000000"
+    t.integer "genre", null: false
+    t.string "download_link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "projects", force: :cascade do |t|
