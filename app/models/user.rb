@@ -7,6 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :projects, dependent: :destroy
+  has_many :games, through: :projects, source: :result, source_type: 'Game'
 
   def name
     email.split('@').first

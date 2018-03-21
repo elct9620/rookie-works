@@ -19,4 +19,6 @@ class Game < ApplicationRecord
   }
 
   has_one :project, as: :result, inverse_of: :result, dependent: :destroy
+
+  accepts_nested_attributes_for :project, update_only: true
 end

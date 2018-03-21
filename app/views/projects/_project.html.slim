@@ -16,6 +16,6 @@
       / p.card-description.text-gray = truncate(project.description, length: 100)
       - if params[:controller] == 'projects'
         .line-divider.line-danger
-        = link_to t('.edit'), edit_project_path(project), class: 'btn btn-small btn-info btn-fill'
+        = link_to t('.edit'), edit_game_path(project.result), class: 'btn btn-small btn-info btn-fill'
         | &nbsp;
-        = link_to t('.destroy'), project_path(project), class: 'btn btn-small btn-danger btn-fill', method: :delete
+        = link_to t('.destroy'), game_path(project.result), class: 'btn btn-small btn-danger btn-fill', method: :delete

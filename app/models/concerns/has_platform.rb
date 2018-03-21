@@ -29,8 +29,6 @@ module HasPlatform
       where('platform & B? <> 0::bit(8)', bit)
     end
 
-    private
-
     def platform_to_bit(platforms)
       platforms.reduce(0) do |prev, platform|
         prev | PLATFORM[platform.to_sym].to_i

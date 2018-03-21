@@ -1,0 +1,17 @@
+.contact-form
+  = bootstrap_form_for(@game) do |gf|
+    = gf.fields_for :project do |f|
+      = f.errors_on :department
+      = f.text_field :name, class: 'form-control-plain', autofocus: true
+      = f.text_area :description, class: 'form-control-plain', rows: 4
+      = f.collection_select :school_id, School.all, :id, :name
+      = f.collection_select :department_id, Department.all, :id, :name
+      = f.collection_check_boxes :exhibition_ids, Exhibition.all, :id, :name_with_year
+      = f.text_field :website, class: 'form-control-plain'
+      = f.text_field :video, class: 'form-control-plain'
+      = f.file_field :thumbnail
+    = gf.select :platform, Game::PLATFORM.keys, {}, multiple: true
+    = gf.select :genre, Game.genres.keys
+    = gf.text_field :download_link
+    .col-md-2.col-md-offset-5
+      = gf.submit t('.submit'), class: 'btn btn-danger btn-fill'

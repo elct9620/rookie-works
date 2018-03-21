@@ -7,7 +7,8 @@ class Project < ApplicationRecord
   belongs_to :department
   belongs_to :school
   belongs_to :user
-  belongs_to :result, polymorphic: true
+  belongs_to :result, polymorphic: true, inverse_of: :project,
+                      dependent: :destroy
 
   has_many :exhibitions_projects, dependent: :destroy
   has_many :exhibitions, through: :exhibitions_projects
