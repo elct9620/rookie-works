@@ -24,7 +24,7 @@ module HasPlatform
   end
 
   class_methods do
-    def platform(*platforms)
+    def platform_is(*platforms)
       bit = platform_to_bit(platforms.flatten)
       where('platform & B? <> 0::bit(8)', bit)
     end
