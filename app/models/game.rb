@@ -17,4 +17,6 @@ class Game < ApplicationRecord
     vr:               10,
     puzzle:           11
   }
+
+  has_one :project, as: :result, inverse_of: :result, dependent: :destroy
 end
