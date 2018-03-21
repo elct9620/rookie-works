@@ -10,7 +10,7 @@ class Game < ApplicationRecord
     adventure:        3,
     action_adventure: 4,
     fighting:         5,
-    platfomer:        6,
+    platformer:        6,
     strategy:         7,
     rpg:              8,
     racing:           9,

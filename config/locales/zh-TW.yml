@@ -1,5 +1,25 @@
 zh-TW:
   site_name: 新人設計師
+  game:
+    platform:
+      window: Windows
+      macos: macOS
+      linux: Linux
+      android: Android
+      ios: iOS
+    genre:
+      unknown: 未知
+      shooter: 射擊
+      action: 動作
+      adventure: 冒險
+      action_adventure: 動作冒險
+      fighting: 格鬥
+      platformer: 橫向捲軸
+      strategy: 策略
+      rpg: 角色扮演
+      racing: 競速
+      vr: 虛擬實境
+      puzzle: 休閒
   keyword:
     graduation_project: 畢業製作
     designer: 設計師
@@ -20,6 +40,15 @@ zh-TW:
       school:  篩選學校
       department: 篩選科系
       exhibition: 篩選展覽
+  games:
+    new:
+      submit_project: 發表作品
+      description: 目前還有許多欄位尚未實裝（僅支援遊戲類型），送出後還可以編輯請不用擔心
+    edit:
+      edit_project: 編輯作品
+      description: 目前還有許多欄位尚未實裝（僅支援遊戲類型），偶爾可以回來看看有沒有資料可以補充
+    form:
+      submit: 送出
   projects:
     index:
       page_name: 我的作品
@@ -30,14 +59,6 @@ zh-TW:
       exhibitions: 展覽
       links: 相關連結
       none: 無
-    new:
-      submit_project: 發表作品
-      description: 目前還有許多欄位尚未實裝，送出後還可以編輯請不用擔心
-    edit:
-      edit_project: 編輯作品
-      description: 目前還有許多欄位尚未實裝，偶爾可以回來看看有沒有資料可以補充
-    form:
-      submit: 送出
     project:
       edit: 編輯
       destroy: 刪除
@@ -87,6 +108,10 @@ zh-TW:
         website: 網站
         thumbnail: 美術圖
         video: 影片
+      game:
+        platform: 平台
+        genre: 類型
+        download_link: 載點
     errors:
       models:
         project:
