@@ -40,6 +40,8 @@ zh-TW:
       school:  篩選學校
       department: 篩選科系
       exhibition: 篩選展覽
+      game:
+        genre: 篩選遊戲類型
   games:
     new:
       submit_project: 發表作品
