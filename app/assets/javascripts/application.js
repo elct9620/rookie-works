@@ -23,6 +23,10 @@ $(document).on('turbolinks:load', function() {
   $('.select2').select2({ theme: 'bootstrap' });
 });
 
+$(document).on('turbolinks:before-cache', function() {
+  $('.select2-hidden-accessible').select2('destroy');
+});
+
 WebFontConfig = {
   google: {
     families: ['Cambo', 'Lato:400,700']
