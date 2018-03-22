@@ -16,12 +16,21 @@ section.section.section-header-blog
             p = render @project.video_type.to_s
           = simple_format  @project.description
       .col-md-3.col-md-offset-1.text-center
+        - @project.result.download_link.present?
+          p
+            = link_to t('.download'), @project.result.download_link, class: 'btn btn-fill btn-lg btn-danger'
         h3.social-title = t('.school')
         p = @project.school.name
         h3.social-title = t('.department')
         p = @project.department.name
         h3.social-title = t('.exhibitions')
         = render(partial: 'exhibition', collection: @project.exhibitions) || content_tag(:p, t('.none'))
+        h3.social-title = t('.platform')
+        - @project.result.platform.each do |platform|
+          span.label.label-fill.label-danger = t("game.platform.#{platform}")
+          | &nbsp;
+        h3.social-title = t('.genre')
+        p = t("game.genre.#{@project.result.genre}")
         h3.social-title = t('.links')
         .social-buttons-blog-posts
           = link_to @project.website, class: 'btn btn-social btn-simple btn-padding' do

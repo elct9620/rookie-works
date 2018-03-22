@@ -12,6 +12,6 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
+    @project = Project.includes(:result).find(params[:id])
   end
 end
