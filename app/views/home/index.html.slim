@@ -28,6 +28,8 @@
           .form-group
             = f.collection_select :exhibitions_id_in, Exhibition.all, :id, :name_with_year, { include_blank: true }, { multiple: true, class: 'select2', 'data-placeholder': t('.exhibition') }
           .form-group
+            = f.select :result_of_Game_type_platform_in, options_for_select(Game::PLATFORM.keys.collect { |k| [t("game.platform.#{k}"), k] }, @picked_platform), { include_blank: true }, { multiple: true, class: 'select2', 'data-placeholder': t('.game.platform') }
+          .form-group
             = f.select :result_of_Game_type_genre_in, Game.genres.collect { |k, v| [t("game.genre.#{k}"), v]}, { include_blank: true }, { multiple: true, class: 'select2', 'data-placeholder': t('.game.genre') }
           .form-group
             = f.submit class: 'btn btn-primary'

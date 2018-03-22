@@ -42,6 +42,7 @@ zh-TW:
       exhibition: 篩選展覽
       game:
         genre: 篩選遊戲類型
+        platform: 篩選遊戲平台
   games:
     new:
       submit_project: 發表作品
