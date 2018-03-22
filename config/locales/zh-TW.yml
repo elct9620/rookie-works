@@ -30,7 +30,7 @@ zh-TW:
       signin: 登入
       signup: 註冊
     footer:
-      copyright: "Powered by 蒼時弦也"
+      copyright: Powered by <a href="https://blog.frost.tw">蒼時弦也</a>
   home:
     index:
       description: 瀏覽今年設計科系畢業生作品
