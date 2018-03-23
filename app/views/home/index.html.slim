@@ -34,7 +34,7 @@
           .form-group
             = f.submit class: 'btn btn-primary'
     .row
-      = render @projects
+      = render @projects, cached: true
     .row
       .col-md-12.text-center
         = paginate @projects

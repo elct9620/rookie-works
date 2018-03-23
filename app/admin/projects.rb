@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register Project do
+  includes :school, :department, :user
   permit_params :name, :description, :school_id, :department_id,
                 :website, :video
 
