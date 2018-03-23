@@ -9,7 +9,7 @@ module HeadHelper
   end
 
   def meta(name, content, options = {})
-    content_tag :meta, nil, options.merge(name: name, content: content)
+    tag :meta, options.merge(name: name, content: content)
   end
 
   def description_meta
