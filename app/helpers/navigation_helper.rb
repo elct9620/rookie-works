@@ -7,15 +7,8 @@ module NavigationHelper
     end
   end
 
-  def user_projects_link
-    if user_signed_in?
-      nav_link t('shared.nav.projects'), projects_path
-    else
-      capture do
-        concat nav_link t('shared.nav.signin'), new_user_session_path
-        concat nav_link t('shared.nav.signup'), new_user_registration_path
-      end
-    end
+  def nav_items(guest: false, &_block)
+    yield if guest ^ user_signed_in?
   end
 
   def nav_wrapper(&block)

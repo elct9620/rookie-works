@@ -29,6 +29,7 @@ zh-TW:
       projects: 我的作品
       signin: 登入
       signup: 註冊
+      signout: 登出
     footer:
       copyright: Powered by <a href="https://blog.frost.tw">蒼時弦也</a>
   home:

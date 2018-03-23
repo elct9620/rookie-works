@@ -10,5 +10,10 @@
       = link_to t('site_name'), root_path, class: 'navbar-brand'
     .collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right.navbar-uppercase
-        = user_projects_link
+        - nav_items do
+          = nav_link t('shared.nav.projects'), projects_path
+          = nav_link t('shared.nav.signout'),  destroy_user_session_path, method: :delete
+        - nav_items(guest: true) do
+          = nav_link t('shared.nav.signin'), new_user_session_path
+          = nav_link t('shared.nav.signup'), new_user_registration_path
         = nav_link t('.submit'), new_game_path, class: 'btn btn-danger btn-fill'
