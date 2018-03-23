@@ -37,3 +37,23 @@ set :default_env, { path: '/usr/local/ruby-2.3.6/bin:$PATH' }
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+namespace :deploy do
+  desc "Uploads a robots.txt that mandates the site as off-limits to crawlers"
+  task :block_robots do
+    content = [
+      '# This is a staging site. Do not index.',
+      'User-agent: *',
+      'Disallow: /'
+    ].join($/)
+
+    on roles(:beta) do
+      within release_path do
+        info 'Uploading blocking robots.txt'
+        execute :echo, "\"#{content}\" > public/robots.txt"
+      end
+    end
+  end
+
+  after :finishing, :block_robots
+end

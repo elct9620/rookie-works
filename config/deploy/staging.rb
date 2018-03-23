@@ -1,2 +1,2 @@
-server '159.65.135.43', user: 'deploy', roles: %w{app web db}
+server '159.65.135.43', user: 'deploy', roles: %w{app web db beta}
 set :deploy_to, '/home/deploy/beta.rookie.works'
