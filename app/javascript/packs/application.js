@@ -29,14 +29,6 @@ var burger_menu;
 var scroll_distance = 500;
 
 $(document).on('turbolinks:load', function(event){
-    // Tag Manager
-    if (typeof window.dataLayer !== "undefined" && window.dataLayer !== null) {
-      window.dataLayer.push({
-        'event':'turbolinks:load',
-        'virtualUrl': event.data.url
-      });
-    }
-
     BrowserDetect.init();
 
     if(BrowserDetect.browser == 'Explorer' && BrowserDetect.version <= 9){
