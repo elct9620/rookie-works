@@ -21,6 +21,14 @@
 
 $(document).on('turbolinks:load', function() {
   $('.select2').select2({ theme: 'bootstrap' });
+
+  // Tag Manager
+  if (typeof window.dataLayer !== "undefined" && window.dataLayer !== null) {
+    window.dataLayer.push({
+      'event':'turbolinks:load',
+      'virtualUrl': event.data.url
+    });
+  }
 });
 
 $(document).on('turbolinks:before-cache', function() {
