@@ -19,6 +19,8 @@ class Project < ApplicationRecord
   validates :video, format: { with: VIDEO_FORMAT, allow_blank: true }
   validates :department, inclusion: { in: ->(p) { p.school.departments } }
 
+  scope :latest, -> { order(created_at: :desc) }
+
   def video_type
     return :vimeo if video.include?('vimeo')
     :youtube

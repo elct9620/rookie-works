@@ -8,18 +8,21 @@ class HomeController < ApplicationController
     @q = Project.ransack(params[:q])
     @projects = @q.result(distinct: true)
 
-    if @picked_platform.any?
-      @projects = @projects.where(result: Game.platform_is(@picked_platform))
-    end
+    include_platform if picked_platform.any?
 
     @projects =
       @projects
       .includes(:school, :department)
+      .latest
       .page(current_page)
       .per(50) # TODO: Let it changable
   end
 
   private
+
+  def include_platform
+    @projects = @projects.where(result: Game.platform_is(@picked_platform))
+  end
 
   def picked_platform
     @picked_platform ||=
