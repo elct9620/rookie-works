@@ -36,6 +36,9 @@ gem 'omniauth-facebook'
 # Admin
 gem 'activeadmin'
 
+# SEO
+gem 'meta-tags'
+
 # Misc
 gem 'kaminari'
 gem 'rails-i18n'

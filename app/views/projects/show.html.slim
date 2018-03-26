@@ -1,12 +1,12 @@
-- content_for :page_name, @project.name
-- content_for :page_description, @project.description
-
+- keywords [@project.name, '遊戲', *@project.exhibitions.pluck(:name)]
+- set_meta_tags og: { image: @project.thumbnail_url }
+- set_meta_tags og: { video: @project.video } if @project.video.present?
 section.section.section-header-blog
   .parallax.filter.filter-color-black
     .image[style="background-image: url('#{@project.thumbnail_url}')"]
   .container
     .content
-      h1 = @project.name
+      h1 = title @project.name
 .section
   .container
     .row
@@ -14,7 +14,7 @@ section.section.section-header-blog
         .content-blog
           - if @project.video.present?
             p = render @project.video_type.to_s
-          = simple_format  @project.description
+          = simple_format  description(@project.description)
       .col-md-3.col-md-offset-1.text-center
         - @project.result.download_link.present?
           p
