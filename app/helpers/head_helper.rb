@@ -18,12 +18,14 @@ module HeadHelper
 
   private
 
+  # TODO: Move APP ID to config file
   def seo_og_options
     {
       title: :full_title,
       site_name: :site,
       description: :description,
       type: 'website',
+      app_id: '153631255329718',
       url: original_url
     }
   end
