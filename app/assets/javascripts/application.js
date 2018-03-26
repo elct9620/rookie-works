@@ -29,6 +29,11 @@ $(document).on('turbolinks:load', function() {
       'virtualUrl': event.data.url
     });
   }
+
+  // Facebook FBML
+  if (typeof FB !== "undefined" && FB !== null) { // Instance of FacebookSDK
+    FB.XFBML.parse();
+  }
 });
 
 $(document).on('turbolinks:before-cache', function() {
