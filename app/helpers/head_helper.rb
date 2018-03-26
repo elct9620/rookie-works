@@ -8,6 +8,7 @@ module HeadHelper
       description: nil,
       keywords: '設計,畢業,畢業專題,遊戲,動畫',
       og: seo_og_options,
+      fb: { app_id: '153631255329718' },
       reverse: true
     )
   end
@@ -25,7 +26,6 @@ module HeadHelper
       site_name: :site,
       description: :description,
       type: 'website',
-      app_id: '153631255329718',
       url: original_url
     }
   end
