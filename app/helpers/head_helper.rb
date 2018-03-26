@@ -12,13 +12,19 @@ module HeadHelper
     )
   end
 
+  def original_url
+    url_for(only_path: false)
+  end
+
   private
 
   def seo_og_options
     {
       title: :full_title,
       site_name: :site,
-      description: :description
+      description: :description,
+      type: 'website',
+      url: original_url
     }
   end
 end

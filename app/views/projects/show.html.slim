@@ -1,5 +1,5 @@
 - keywords [@project.name, '遊戲', *@project.exhibitions.pluck(:name)]
-- set_meta_tags og: { image: @project.thumbnail_url }
+- set_meta_tags og: { image: { _: @project.thumbnail_url(:medium), width: 860, height: 520} }
 - set_meta_tags og: { video: @project.video } if @project.video.present?
 section.section.section-header-blog
   .parallax.filter.filter-color-black
