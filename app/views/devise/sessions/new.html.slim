@@ -6,6 +6,7 @@ section.section.section-signin
       .title-area
         h2 = t('.welcome')
         .separator.separator-danger ✻
+      = alert_messages
       = bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         = f.label :email do
           h4.text-gray = t('.email')

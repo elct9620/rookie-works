@@ -13,4 +13,9 @@ module ApplicationHelper
     page_name = content_for(:page_name)
     [page_name, t('site_name')].compact.join(' | ')
   end
+
+  def alert_messages
+    return if flash.alert.blank?
+    content_tag :div, flash.alert, class: 'alert alert-danger'
+  end
 end
