@@ -20,6 +20,7 @@ gem 'webpacker'
 # Front-end
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'bootstrap_form', '~> 2.7'
+gem 'ckeditor'
 gem 'jquery-rails'
 gem 'select2-rails', '~> 4.0.3'
 gem 'slim-rails'

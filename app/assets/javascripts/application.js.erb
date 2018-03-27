@@ -34,6 +34,11 @@ $(document).on('turbolinks:load', function() {
   if (typeof FB !== "undefined" && FB !== null) { // Instance of FacebookSDK
     FB.XFBML.parse();
   }
+
+  // Ckeditor
+  $('.ckeditor').each(function() {
+    CKEDITOR.replace($(this).attr('id'), { customConfig: "<%= asset_path('ckeditor/config') %>" });
+  });
 });
 
 $(document).on('turbolinks:before-cache', function() {
