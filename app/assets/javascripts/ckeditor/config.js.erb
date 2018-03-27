@@ -1,0 +1,12 @@
+CKEDITOR.plugins.addExternal('imgur', '<%= asset_path('ckeditor/plugins/imgur/plugin.js') %>');
+
+CKEDITOR.editorConfig = function (config) {
+  config.extraPlugins = 'imgur';
+
+  config.toolbar_mini = [
+    ["Undo", "Redo", "-"],
+    ["Bold",  "Italic",  "Underline",  "Strike", "-", "Imgur"],
+  ];
+  config.toolbar = "mini";
+  config.imgurClientID = '3e615942ad6e55e';
+}

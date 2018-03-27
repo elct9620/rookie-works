@@ -36,7 +36,7 @@ $(document).on('turbolinks:load', function() {
   }
 
   // Ckeditor
-  $('.ckeditor').each(function() {
+  $('.rich').each(function() {
     CKEDITOR.replace($(this).attr('id'), { customConfig: "<%= asset_path('ckeditor/config') %>" });
   });
 });
