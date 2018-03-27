@@ -43,6 +43,7 @@ gem 'meta-tags'
 gem 'kaminari'
 gem 'rails-i18n'
 gem 'ransack'
+gem 'rollbar'
 gem 'sitemap_generator'
 gem 'whenever', require: false
 
