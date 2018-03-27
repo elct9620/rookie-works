@@ -1,6 +1,8 @@
 # config valid for current version and patch releases of Capistrano
 lock '~> 3.10.1'
 
+Dotenv.load
+
 set :application, 'rookie-works'
 set :repo_url, 'git@git.frost.tw:elct9620/rookie-works.git'
 
@@ -37,6 +39,11 @@ set :default_env, { path: '/usr/local/ruby-2.3.6/bin:$PATH' }
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+# Rollbar
+set :rollbar_token, ENV['ROLLBAR_ACCESS_TOKEN']
+set :rollbar_env, Proc.new { fetch :stage }
+set :rollbar_role, Proc.new { :app }
 
 namespace :deploy do
   desc "Uploads a robots.txt that mandates the site as off-limits to crawlers"

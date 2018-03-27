@@ -40,10 +40,11 @@ gem 'activeadmin'
 gem 'meta-tags'
 
 # Misc
+gem 'dotenv-rails'
 gem 'kaminari'
 gem 'rails-i18n'
 gem 'ransack'
-gem 'rollbar'
+gem 'rollbar', '~> 2.15.0'
 gem 'sitemap_generator'
 gem 'whenever', require: false
 

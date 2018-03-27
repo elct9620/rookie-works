@@ -26,3 +26,5 @@ yarn-debug.log*
 /public/uploads
 
 config/secrets.*.yml
+
+.env

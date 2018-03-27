@@ -38,6 +38,9 @@ require 'capistrano/passenger'
 require 'capistrano/upload-config'
 require 'capistrano/sitemap_generator'
 require 'whenever/capistrano'
+require 'rollbar/capistrano3'
+
+require 'dotenv'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
