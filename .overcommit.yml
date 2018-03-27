@@ -27,6 +27,7 @@ PreCommit:
     exclude:
       - '**/db/structure.sql' # Ignore trailing whitespace in generated files
       - vendor/**/*
+      - public/ckeditor/**/*
 
 PrePush:
   Brakeman:
