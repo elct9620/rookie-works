@@ -24,8 +24,9 @@
         .title-area
           h2 = t('.projects')
           .separator.separator-danger ✻
-    .row
-      = render @projects
+    - @projects.in_groups_of(3) do |projects|
+      .row
+        = render projects.compact, cached: true
     .row
       .col-md-12.text-center
         = paginate @projects

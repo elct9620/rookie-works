@@ -33,7 +33,7 @@
             = f.select :result_of_Game_type_genre_in, Game.genres.collect { |k, v| [t("game.genre.#{k}"), v]}, { include_blank: true }, { multiple: true, class: 'select2', 'data-placeholder': t('.game.genre') }
           .form-group
             = f.submit class: 'btn btn-primary'
-    = @projects.in_groups_of(3) do |projects|
+    - @projects.in_groups_of(3) do |projects|
       .row
         = render projects.compact, cached: true
     .row
