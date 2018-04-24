@@ -57,6 +57,6 @@ class ThumbnailUploader < CarrierWave::Uploader::Base
   def filename
     return if original_filename.blank?
     ext = original_filename.split('.').last
-    "thumbnail.#{ext}"
+    "thumbnail-#{Time.zone.now.to_i}.#{ext}"
   end
 end
