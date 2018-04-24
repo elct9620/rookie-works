@@ -66,6 +66,8 @@ zh-TW:
       genre: 類型
       download: 下載
       none: 無
+      bookmark: 加入書籤
+      unbookmark: 取消書籤
     project:
       edit: 編輯
       destroy: 刪除

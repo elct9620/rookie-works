@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :projects, dependent: :destroy
   has_many :games, through: :projects, source: :result, source_type: 'Game'
 
+  has_many :bookmarks, dependent: :destroy
+
   def name
     email.split('@').first
   end
