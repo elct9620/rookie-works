@@ -8,19 +8,7 @@
   .container
     .row
       .col-md-12
-        .title-area
-          h2 = t('.about')
-          .separator.separator-danger ✻
-          .description = sanitize t('.about_this_site')
-  .container
-    .row
-      .col-md-12
-        .title-area
-          h2 = t('.projects')
-          .separator.separator-danger ✻
-    .row
-      .col-md-12
-        = search_form_for @q, url: root_path do |f|
+        = search_form_for @q, url: bookmarks_path do |f|
           .form-group
             = f.collection_select :school_id_in, School.all, :id, :name, { include_blank: true }, { multiple: true, class: 'select2', 'data-placeholder': t('.school') }
           .form-group

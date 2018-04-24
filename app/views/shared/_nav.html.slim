@@ -11,6 +11,7 @@
     .collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right.navbar-uppercase
         - nav_items do
+          = nav_link t('shared.nav.bookmarks'), bookmarks_path
           = nav_link t('shared.nav.projects'), projects_path
           = nav_link t('shared.nav.signout'),  destroy_user_session_path, method: :delete
         - nav_items(guest: true) do

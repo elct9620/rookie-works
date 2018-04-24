@@ -27,16 +27,21 @@ zh-TW:
     nav:
       submit: 發表作品
       projects: 我的作品
+      bookmarks: 我的收藏
       signin: 登入
       signup: 註冊
       signout: 登出
     footer:
       copyright: Powered by <a href="https://blog.frost.tw">蒼時弦也</a>
   home:
-    index:
+    index: &home_index
       description: 瀏覽今年設計科系畢業生作品
       about: 關於這個網站
-      about_this_site: 目前網站還在開發中，還有許多功能會陸續上線。
+      about_this_site:
+        >
+          <p><strong>2018/03/10</strong> - 目前暫時僅支援登陸遊戲類資料，其他類型作品仍在開發中</p>
+          <p><strong>2018/04/24</strong> - 加入收藏功能已經開放，登入後即可使用。</p>
+
       projects: 作品列表
       school:  篩選學校
       department: 篩選科系
@@ -44,6 +49,9 @@ zh-TW:
       game:
         genre: 篩選遊戲類型
         platform: 篩選遊戲平台
+  bookmarks:
+    index:
+      <<: *home_index
   games:
     new:
       submit_project: 發表作品
@@ -66,8 +74,8 @@ zh-TW:
       genre: 類型
       download: 下載
       none: 無
-      bookmark: 加入書籤
-      unbookmark: 取消書籤
+      bookmark: 收藏作品
+      unbookmark: 取消收藏
     project:
       edit: 編輯
       destroy: 刪除
