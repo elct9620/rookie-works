@@ -16,7 +16,7 @@ section.section.section-header-blog
             p = render @project.video_type.to_s
           = simple_format  description(@project.description)
       .col-md-3.col-md-offset-1.text-center
-        - @project.result.download_link.present?
+        - if @project.result.download_link.present?
           p
             = link_to t('.download'), @project.result.download_link, class: 'btn btn-fill btn-lg btn-danger'
         - if user_signed_in?
