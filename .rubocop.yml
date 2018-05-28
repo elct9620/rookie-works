@@ -16,6 +16,7 @@ Rails:
   Enabled: true
 Metrics/BlockLength:
   Exclude:
+    - app/admin/**/*.rb
     - spec/**/*_spec.rb
     - spec/support/*
     - Guardfile
