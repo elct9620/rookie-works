@@ -2,7 +2,7 @@ zh-TW:
   site_name: 新人設計師
   game:
     platform:
-      window: Windows
+      windows: Windows
       macos: macOS
       linux: Linux
       android: Android

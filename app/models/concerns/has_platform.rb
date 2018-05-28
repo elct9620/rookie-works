@@ -7,7 +7,7 @@ module HasPlatform
     windows:  0b00000001,
     macos:    0b00000010,
     linux:    0b00000100,
-    androind: 0b00001000,
+    android: 0b00001000,
     ios:      0b00010000
   }.freeze
 
