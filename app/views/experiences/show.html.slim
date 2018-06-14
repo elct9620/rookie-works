@@ -21,6 +21,7 @@ section.section.section-header-blog
             = image_tag @post.user.avatar_url
         .description.text-center
           h3.big-text = @post.user.name
+          p.small-text = @post.user.team
         p
           .fb-share-button[data-href="#{original_url}" data-layout="button_count"]
           | &nbsp;
