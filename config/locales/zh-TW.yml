@@ -59,6 +59,7 @@ zh-TW:
     post:
       read_more: 繼續閱讀
     show:
+      edit: 編輯
       author: 作者
     empty_list:
       comming_soon: 即將登場

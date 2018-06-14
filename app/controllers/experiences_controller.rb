@@ -2,6 +2,7 @@
 
 class ExperiencesController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
+  before_action :find_post, only: %i[edit update]
 
   def index
     @posts = Post.latest.published.experience
@@ -20,6 +21,13 @@ class ExperiencesController < ApplicationController
     render :new
   end
 
+  def edit; end
+
+  def update
+    return redirect_to experience_path(@post) if @post.update(post_params)
+    render :edit
+  end
+
   private
 
   def post_params
@@ -31,5 +39,9 @@ class ExperiencesController < ApplicationController
       category: :experience,
       status:   :reviewing
     )
+  end
+
+  def find_post
+    @post = current_user.posts.find(params[:id])
   end
 end

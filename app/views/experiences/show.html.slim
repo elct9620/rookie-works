@@ -12,6 +12,9 @@ section.section.section-header-blog
         .content-blog
           = simple_format description(@post.content)
       .col-md-3.col-md-offset-1.text-center
+        - if current_user == @post.user
+          p
+            = link_to t('.edit'), edit_experience_path(@post), class: 'btn btn-fill btn-lg btn-danger'
         h3.social-title = t('.author')
         .author
           .avatar.avatar-danger
@@ -22,3 +25,4 @@ section.section.section-header-blog
           .fb-share-button[data-href="#{original_url}" data-layout="button_count"]
           | &nbsp;
           .fb-like[data-href="#{original_url}" data-layout="button_count" data-action="like" data-show-faces="true"]
+
