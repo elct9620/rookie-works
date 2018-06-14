@@ -124,6 +124,14 @@ zh-TW:
         password_confirmation: 確認密碼
         signin_help: 或是登入已經註冊的
         account: 帳號
+      edit:
+        profile: 個人資料
+        password: 密碼
+        password_confirmation: 確認密碼
+        profile_help: 回到
+        home: 首頁
+        update: 更新
+        password_update_hint: 如果沒有要修改密碼，請將密碼留空
   views:
     pagination:
       first: 第一頁
