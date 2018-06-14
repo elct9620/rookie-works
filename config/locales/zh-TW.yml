@@ -126,7 +126,10 @@ zh-TW:
         account: 帳號
       edit:
         profile: 個人資料
-        password: 密碼
+        display_name: 暱稱
+        team: 所屬團隊
+        current_password: 目前密碼
+        password: 新密碼
         password_confirmation: 確認密碼
         profile_help: 回到
         home: 首頁
