@@ -7,4 +7,7 @@
 .section.section-blog-horizontal
   .container
     = render(partial: 'post', collection: @posts) || render('empty_list')
+    .row
+      .col-md-12.text-center
+        = paginate @posts
 
