@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180424070759) do
+ActiveRecord::Schema.define(version: 20180614065608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,21 @@ ActiveRecord::Schema.define(version: 20180424070759) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "content", null: false
+    t.bigint "user_id"
+    t.string "thumbnail"
+    t.integer "category", default: 0, null: false
+    t.integer "status", default: 0, null: false
+    t.datetime "published_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["title"], name: "index_posts_on_title"
+    t.index ["user_id", "category", "status"], name: "index_posts_on_user_id_and_category_and_status"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -139,6 +154,7 @@ ActiveRecord::Schema.define(version: 20180424070759) do
 
   add_foreign_key "bookmarks", "projects"
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "posts", "users"
   add_foreign_key "projects", "departments"
   add_foreign_key "projects", "schools"
   add_foreign_key "projects", "users"
