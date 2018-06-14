@@ -8,6 +8,7 @@ ActiveAdmin.register Post do
     column :title
     column :category
     column :status
+    column :user
     column :published_at
     actions
   end
