@@ -8,6 +8,7 @@ class CreatePosts < ActiveRecord::Migration[5.1]
       t.integer :category, null: false, default: 0
       t.integer :status, null: false, default: 0
 
+      t.datetime :published_at
       t.timestamps
     end
 

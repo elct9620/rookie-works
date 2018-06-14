@@ -15,4 +15,16 @@ class Post < ApplicationRecord
     published: 2,
     deleted:   3
   }
+
+  scope :latest, -> { order(published_at: :desc) }
+
+  before_save :set_publish_time
+
+  private
+
+  def set_publish_time
+    return unless status_changed?
+    return unless published?
+    self.published_at = Time.zone.now
+  end
 end

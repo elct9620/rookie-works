@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :games, except: %i[index show]
   resources :exhibitions, only: %i[show]
   resources :bookmarks, only: %i[index create destroy]
+  resources :experiences, except: %i[destroy]
 end

@@ -25,6 +25,7 @@ zh-TW:
     designer: 設計師
   shared:
     nav:
+      experience: 心得分享
       submit: 發表作品
       projects: 我的作品
       bookmarks: 我的收藏
@@ -49,6 +50,17 @@ zh-TW:
       game:
         genre: 篩選遊戲類型
         platform: 篩選遊戲平台
+  experiences:
+    index:
+      page_name: 心得分享
+      description: 了解每個團隊背後的心路歷程與經驗
+    post:
+      read_more: 繼續閱讀
+    show:
+      author: 作者
+    empty_list:
+      comming_soon: 即將登場
+      no_experience_available: 尚未有心得分享
   bookmarks:
     index:
       <<: *home_index
@@ -108,7 +120,12 @@ zh-TW:
       previous: 上一頁
       next: 下一頁
       truncate: "&hellip;"
-  activerecord:
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%Y 年 %m 月 %d 日"
+      short: "%m 月 %d 日"
+      activerecord:
     models:
       project: 作品
     attributes:

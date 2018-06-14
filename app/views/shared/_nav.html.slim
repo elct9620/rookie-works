@@ -10,6 +10,7 @@
       = link_to t('site_name'), root_path, class: 'navbar-brand'
     .collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right.navbar-uppercase
+        = nav_link t('.experience'), experiences_path
         - nav_items do
           = nav_link t('shared.nav.bookmarks'), bookmarks_path
           = nav_link t('shared.nav.projects'), projects_path

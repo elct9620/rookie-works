@@ -15,4 +15,9 @@ class User < ApplicationRecord
   def name
     email.split('@').first
   end
+
+  def avatar_url(size = 100)
+    hash = Digest::MD5.hexdigest(email)
+    "https://www.gravatar.com/avatar/#{hash}?s=#{size}"
+  end
 end

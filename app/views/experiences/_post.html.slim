@@ -1,0 +1,13 @@
+.card.card-plain.card-blog
+  .row
+    .col-sm-6
+      = link_to experience_path(post), class: 'hdeader' do
+        / TODO: Put thumbnail
+        / = image_tag 'img/header-4.jpg'
+    .col-sm-5.col-md-offset-1
+      .content
+        h5.card-category.text-info = l post.published_at.to_date, format: :long
+        = link_to experience_path(post), class: 'card-title' do
+          h2 = post.title
+        p.text-gray = truncate strip_tags(post.content), length: 500
+        = link_to t('.read_more'),  experience_path(post), class: 'btn btn-danger btn-fill'
