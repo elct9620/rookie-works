@@ -1,9 +1,8 @@
 .card.card-plain.card-blog
   .row
     .col-sm-6
-      = link_to experience_path(post), class: 'hdeader' do
-        / TODO: Put thumbnail
-        / = image_tag 'img/header-4.jpg'
+      = link_to experience_path(post), class: 'header' do
+        = image_tag post.thumbnail_url(:thumb)
     .col-sm-5.col-md-offset-1
       .content
         h5.card-category.text-info = l post.published_at.to_date, format: :long

@@ -1,0 +1,12 @@
+- content_for :nontransparent_nav, true
+.wrapper
+  section.section.section-contact-form
+    .container
+      .title-area
+        h2 = t('.submit_experience')
+        .separator.separator-danger ✻
+        p.description = t('.description')
+      .row
+        .col-md-8.col-md-offset-2
+         = render 'form'
+

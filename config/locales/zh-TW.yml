@@ -26,6 +26,7 @@ zh-TW:
   shared:
     nav:
       experience: 心得分享
+      submit_experience: 投稿心得
       submit: 發表作品
       projects: 我的作品
       bookmarks: 我的收藏
@@ -62,6 +63,14 @@ zh-TW:
     empty_list:
       comming_soon: 即將登場
       no_experience_available: 尚未有心得分享
+    new:
+      submit_experience: 投稿心得
+      description: 投稿後需要等管理員確認才會出現，請耐心等候
+    edit:
+      edit_experience: 編輯心得
+      description: 投稿後需要等管理員確認才會出現，請耐心等候
+    form:
+      submit: 送出
   bookmarks:
     index:
       <<: *home_index
@@ -126,13 +135,18 @@ zh-TW:
       default: "%Y-%m-%d"
       long: "%Y 年 %m 月 %d 日"
       short: "%m 月 %d 日"
-      activerecord:
+  activerecord:
     models:
       project: 作品
+      post: 文章
     attributes:
       user:
         email: 信箱
         password: 密碼
+      post:
+        title: 主題
+        content: 內文
+        thumbnail: 主要插圖
       project:
         name: 作品名稱
         description: 作品介紹

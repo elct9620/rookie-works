@@ -15,6 +15,7 @@
           = nav_link t('shared.nav.bookmarks'), bookmarks_path
           = nav_link t('shared.nav.projects'), projects_path
           = nav_link t('shared.nav.signout'),  destroy_user_session_path, method: :delete
+          = nav_link t('shared.nav.submit_experience'), new_experience_path, class: 'btn btn-danger btn-fill'
         - nav_items(guest: true) do
           = nav_link t('shared.nav.signin'), new_user_session_path
           = nav_link t('shared.nav.signup'), new_user_registration_path

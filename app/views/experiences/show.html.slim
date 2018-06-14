@@ -1,6 +1,7 @@
+- set_meta_tags og: { image: { _: @post.thumbnail_url(:medium), width: 860, height: 520} }
 section.section.section-header-blog
   .parallax.filter.filter-color-black
-    / .image[style="background-image: url('#{@post.thumbnail_url}')"]
+    .image[style="background-image: url('#{@post.thumbnail_url}')"]
   .container
     .content
       h1 = title @post.title

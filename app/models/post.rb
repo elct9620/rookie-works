@@ -3,6 +3,8 @@
 class Post < ApplicationRecord
   belongs_to :user
 
+  mount_uploader :thumbnail, PostThumbnailUploader
+
   enum category:  {
     announcement: 0,
     experience:   1,
