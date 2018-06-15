@@ -13,7 +13,8 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
 
   def name
-    display_name || email.split('@').first
+    return display_name if display_name.present?
+    email.split('@').first
   end
 
   def avatar_url(size = 100)
