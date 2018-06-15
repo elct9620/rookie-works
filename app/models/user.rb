@@ -12,10 +12,12 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
 
-  def name
-    return display_name if display_name.present?
+  def display_name
+    return self[:display_name] if self[:display_name].present?
     email.split('@').first
   end
+
+  alias name display_name
 
   def avatar_url(size = 100)
     hash = Digest::MD5.hexdigest(email)
