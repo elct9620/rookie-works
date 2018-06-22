@@ -81,6 +81,9 @@ group :development do
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
   gem 'capistrano-upload-config'
+
+  # Debug
+  gem 'letter_opener'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
