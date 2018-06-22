@@ -7,6 +7,8 @@ class Post < ApplicationRecord
 
   mount_uploader :thumbnail, PostThumbnailUploader
 
+  validates :title, :content, presence: true
+
   enum category:  {
     announcement: 0,
     experience:   1,

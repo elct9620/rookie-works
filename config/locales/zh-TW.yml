@@ -62,6 +62,7 @@ zh-TW:
     show:
       edit: 編輯
       author: 作者
+      comments: 留言
     empty_list:
       comming_soon: 即將登場
       no_experience_available: 尚未有心得分享
@@ -73,6 +74,9 @@ zh-TW:
       description: 投稿後需要等管理員確認才會出現，請耐心等候
     form:
       submit: 送出
+    comment_form:
+      leave_your_comment: 寫下你的想法吧！
+      comment: 留言
   bookmarks:
     index:
       <<: *home_index

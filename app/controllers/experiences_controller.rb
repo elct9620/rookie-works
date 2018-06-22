@@ -5,11 +5,13 @@ class ExperiencesController < ApplicationController
   before_action :find_post, only: %i[edit update]
 
   def index
-    @posts = Post.latest.published.experience.page(params[:page]).per(10)
+    @posts = Experience.latest.published.page(params[:page]).per(10)
   end
 
   def show
-    @post = Post.published.experience.find(params[:id])
+    @post = Experience.published.find(params[:id])
+    @comments = @post.comments.latest.includes(:user)
+    @comment = Comment.new
   end
 
   def new

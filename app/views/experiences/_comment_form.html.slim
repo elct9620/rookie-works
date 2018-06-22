@@ -1,0 +1,8 @@
+.section
+  .container
+    .contact-form
+      = bootstrap_form_for([@post, @comment]) do |f|
+        .row
+          .col-md-8
+            = f.text_area :content, rows: 8, placeholder: t('.leave_your_comment'), hide_label: true
+            = f.submit t('.comment'), class: 'btn btn-danger btn-fill pull-right'

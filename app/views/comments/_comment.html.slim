@@ -1,0 +1,8 @@
+.media
+  / TODO: Add Link
+  .avatar.avatar-danger.pull-left
+    = image_tag comment.user.avatar_url, class: 'media-object'
+  .media-body
+    h3.media-heading = comment.user.name
+    h5.text-muted.pull-right = l comment.created_at, format: :long
+    = simple_format comment.content
