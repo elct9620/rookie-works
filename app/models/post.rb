@@ -34,7 +34,7 @@ class Post < ApplicationRecord
 
   def notify_user_published
     return unless experience?
-    return unless published_at_changed?
+    return unless saved_change_to_published_at?
     return if published_at.nil?
     ExperienceMailer.notify_published(self).deliver_now
   end
