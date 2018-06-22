@@ -33,4 +33,5 @@ section.section.section-header-blog
       .col-md-8
         .media-area
           = render @comments
+        = paginate @comments
   = render 'comment_form'
