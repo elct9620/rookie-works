@@ -112,6 +112,10 @@ zh-TW:
     new_experience_submit: 收到新的心得投稿 - %{title}
     notify_review:
       review: 檢查
+    notify_published:
+      published: 心得分享：%{title} 已經公開
+      message: 您的心得分享目前已經公開在新人設計師上可以被瀏覽。
+      view: 閱讀
   layouts:
     mailer:
       home: 首頁
