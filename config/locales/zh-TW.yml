@@ -108,6 +108,14 @@ zh-TW:
       plan_image: 展場平面圖
       projects: 參展作品
       description: 查詢與瀏覽 %{year} 年參與 %{name} 的畢業專題或學生作品。
+  experience_mailer:
+    new_experience_submit: 收到新的心得投稿 - %{title}
+    notify_review:
+      review: 檢查
+  layouts:
+    mailer:
+      home: 首頁
+      experiences: 心得分享
   devise:
     sessions:
       new:
