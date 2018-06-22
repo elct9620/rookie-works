@@ -21,6 +21,8 @@ class Post < ApplicationRecord
   scope :latest, -> { order(published_at: :desc) }
 
   before_save :set_publish_time
+  after_create :notify_reviewer
+  after_update :notify_user_published
 
   private
 
@@ -28,5 +30,17 @@ class Post < ApplicationRecord
     return unless status_changed?
     return unless published?
     self.published_at = Time.zone.now
+  end
+
+  def notify_user_published
+    return unless experience?
+    return unless published_at_changed?
+    return if published_at.nil?
+    ExperienceMailer.notify_published(self).deliver_now
+  end
+
+  def notify_reviewer
+    return unless experience?
+    ExperienceMailer.notify_review(self).deliver_now
   end
 end
