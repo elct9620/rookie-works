@@ -32,6 +32,6 @@ section.section.section-header-blog
     .row
       .col-md-8
         .media-area
-          = render @comments
+          = render partial: 'comments/comment', collection: @comments
         = paginate @comments
   = render 'comment_form'
