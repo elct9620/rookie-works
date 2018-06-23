@@ -10,7 +10,7 @@ class ExperiencesController < ApplicationController
 
   def show
     @post = Experience.published.find(params[:id])
-    @comments = @post.comments.latest.includes(:user).page(params[:page])
+    @comments = @post.comments.oldest.includes(:user).page(params[:page])
     @comment = Comment.new
   end
 

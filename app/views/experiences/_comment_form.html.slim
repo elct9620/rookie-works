@@ -1,7 +1,12 @@
-.section
+#comment-form.section
   .container
     .contact-form
-      = bootstrap_form_for([@post, @comment]) do |f|
+      = bootstrap_form_for([@post, @comment], remote: true) do |f|
+        - if flash[:comment_errors].present?
+          .row
+            .col-md-8
+              - flash[:comment_errors].each do |key, value|
+                .alert.alert-danger #{t("activerecord.attributes.comment.#{key}")}#{value.first}
         .row
           .col-md-8
             = f.text_area :content, rows: 8, placeholder: t('.leave_your_comment'), hide_label: true

@@ -6,12 +6,17 @@ class CommentsController < ApplicationController
   RESOURCE_RULE = %r{\/([^\/]+)\/(\d+)\/comments}
 
   def create
-    # TODO: Display error message
-    resource.comments.create(
+    comment = resource.comments.create(
       content: comment_params[:content],
       user: current_user
     )
-    redirect_back fallback_location: experiences_path
+    if comment.valid?
+      redirect_to resource_path(anchor: "comment-#{comment.id}")
+    else
+      # TODO: Improve error message display
+      redirect_to resource_path(anchor: 'comment-form'),
+                  flash: { comment_errors: comment.errors }
+    end
   end
 
   private
@@ -24,7 +29,7 @@ class CommentsController < ApplicationController
 
   # TODO: Rewrite as concern
   def resource
-    resource_name.classify.constantize.find(resource_id)
+    @resource ||= resource_name.classify.constantize.find(resource_id)
   end
 
   def resource_id
@@ -33,5 +38,9 @@ class CommentsController < ApplicationController
 
   def resource_name
     @resource_name ||= url_for[RESOURCE_RULE, 1].singularize
+  end
+
+  def resource_path(options = {})
+    polymorphic_path(resource, options)
   end
 end

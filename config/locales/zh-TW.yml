@@ -190,6 +190,8 @@ zh-TW:
         platform: 平台
         genre: 類型
         download_link: 載點
+      comment:
+        content: 內容
     errors:
       models:
         project:
