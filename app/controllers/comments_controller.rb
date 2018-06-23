@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  before_action :authenticate_user!
 
   RESOURCE_RULE = %r{\/([^\/]+)\/(\d+)\/comments}
 

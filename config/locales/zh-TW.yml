@@ -77,6 +77,7 @@ zh-TW:
     comment_form:
       leave_your_comment: 寫下你的想法吧！
       comment: 留言
+      signin_before_comment: "%{signin}後即可留言"
   bookmarks:
     index:
       <<: *home_index
