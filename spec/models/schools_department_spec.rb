@@ -3,5 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe SchoolsDepartment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should belong_to(:department) }
+  it { should belong_to(:school) }
 end
