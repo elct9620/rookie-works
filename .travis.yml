@@ -1,3 +1,12 @@
 language: ruby
 rvm:
   - 2.5.1
+addons:
+  postgresql: "10"
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
+env:
+  global:
+  - PGPORT=5433
