@@ -6,7 +6,6 @@ addons:
 env:
   global:
     - RAILS_ENV=test
-    - PGPORT=5433
     - DATABASE_URL=postgresql://postgres@localhost/rookie-works
 before_script:
   - psql -c 'create database rookie-works;' -U postgres
