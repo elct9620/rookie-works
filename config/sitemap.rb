@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = 'https://rookie.works'
 SitemapGenerator::Sitemap.ping_search_engines if Rails.env.production?

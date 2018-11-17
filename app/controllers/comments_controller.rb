@@ -3,7 +3,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
-  RESOURCE_RULE = %r{\/([^\/]+)\/(\d+)\/comments}
+  RESOURCE_RULE = %r{\/([^\/]+)\/(\d+)\/comments}.freeze
 
   def create
     comment = resource.comments.create(

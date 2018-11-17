@@ -3,6 +3,7 @@
 module ApplicationHelper
   def fullscreen?
     return unless params[:controller] == 'devise/sessions'
+
     unless params[:controller] == 'devise/registrations'
       return unless params[:action] == 'new'
     end
@@ -16,6 +17,7 @@ module ApplicationHelper
 
   def alert_messages
     return if flash.alert.blank?
+
     content_tag :div, flash.alert, class: 'alert alert-danger'
   end
 end

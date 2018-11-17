@@ -20,6 +20,7 @@ class ExperiencesController < ApplicationController
 
   def create
     return redirect_to experiences_path if build_post.update(post_params)
+
     render :new
   end
 
@@ -27,6 +28,7 @@ class ExperiencesController < ApplicationController
 
   def update
     return redirect_to experience_path(@post) if @post.update(post_params)
+
     render :edit
   end
 
@@ -39,7 +41,7 @@ class ExperiencesController < ApplicationController
   def build_post
     current_user.posts.build(
       category: :experience,
-      status:   :reviewing
+      status: :reviewing
     )
   end
 

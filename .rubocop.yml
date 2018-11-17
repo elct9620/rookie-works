@@ -1,30 +1,42 @@
 AllCops:
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.5.1
   DisplayCopNames: true
-  Include:
-    - Rakefile
-    - config.ru
-    - config/initializer/*
   Exclude:
-    - db/**/*
     - bin/*
-    - config/**/*
     - vendor/ruby/**/*
-    - vendor/bundle/**/*
     - node_modules/**/*
+    - db/schema.rb
 Rails:
   Enabled: true
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+    - staging
+Metrics:
+  Exclude:
+    - db/migrate/*
+    - Rakefile
+    - Gemfile
+    - config/**/*
+    - spec/**/*
+    - lib/tasks/**/*
 Metrics/BlockLength:
   Exclude:
-    - app/admin/**/*.rb
-    - spec/**/*_spec.rb
-    - spec/support/*
-    - Guardfile
-Naming/FileName:
+    - app/admin/*
+    - lib/tasks/**/*
+    - spec/**/*
+    - config/**/*
+Layout:
   Exclude:
-    - Gemfile
-    - Guardfile
-    - Capfile
-    - vendor/paper-kit
+    - config/environments/*
+Style:
+  Exclude:
+    - spec/*_helper.rb
+Style/BlockComments:
+  Exclude:
+    - config/**/*
+    - spec/**/*
 Style/Documentation:
   Enabled: false

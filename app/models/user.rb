@@ -14,6 +14,7 @@ class User < ApplicationRecord
 
   def display_name
     return self[:display_name] if self[:display_name].present?
+
     email.split('@').first
   end
 

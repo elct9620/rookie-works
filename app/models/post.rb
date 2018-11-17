@@ -9,17 +9,17 @@ class Post < ApplicationRecord
 
   validates :title, :content, presence: true
 
-  enum category:  {
+  enum category: {
     announcement: 0,
-    experience:   1,
-    column:       2
+    experience: 1,
+    column: 2
   }
 
   enum status: {
-    draft:     0,
+    draft: 0,
     reviewing: 1,
     published: 2,
-    deleted:   3
+    deleted: 3
   }
 
   scope :latest, -> { order(published_at: :desc) }
@@ -33,6 +33,7 @@ class Post < ApplicationRecord
   def set_publish_time
     return unless status_changed?
     return unless published?
+
     self.published_at = Time.zone.now
   end
 
@@ -40,11 +41,13 @@ class Post < ApplicationRecord
     return unless experience?
     return unless saved_change_to_published_at?
     return if published_at.nil?
+
     ExperienceMailer.notify_published(self).deliver_now
   end
 
   def notify_reviewer
     return unless experience?
+
     ExperienceMailer.notify_review(self).deliver_now
   end
 end

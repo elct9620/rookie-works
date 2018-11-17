@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+require 'English'
+
 # config valid for current version and patch releases of Capistrano
 lock '~> 3.10.1'
 
@@ -29,7 +33,7 @@ append :linked_files, 'config/secrets.yml'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'node_modules', 'public/shared', 'public/uploads'
 
 # Default value for default_env is {}
-set :default_env, { path: '/usr/local/ruby-2.3.6/bin:$PATH' }
+set :default_env, path: '/usr/local/ruby-2.3.6/bin:$PATH'
 
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
@@ -42,17 +46,17 @@ set :default_env, { path: '/usr/local/ruby-2.3.6/bin:$PATH' }
 
 # Rollbar
 set :rollbar_token, ENV['ROLLBAR_ACCESS_TOKEN']
-set :rollbar_env, Proc.new { fetch :stage }
-set :rollbar_role, Proc.new { :app }
+set(:rollbar_env, proc { fetch :stage })
+set(:rollbar_role, proc { :app })
 
 namespace :deploy do
-  desc "Uploads a robots.txt that mandates the site as off-limits to crawlers"
+  desc 'Uploads a robots.txt that mandates the site as off-limits to crawlers'
   task :block_robots do
     content = [
       '# This is a staging site. Do not index.',
       'User-agent: *',
       'Disallow: /'
-    ].join($/)
+    ].join($RS)
 
     on roles(:beta) do
       within release_path do

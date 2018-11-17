@@ -3,6 +3,7 @@
 class Project < ApplicationRecord
   VIDEO_FORMAT =
     %r{\Ahttp[s]?+:\/\/(?:(www|player)\.)?(youtu(be)?|vimeo)(?:\.(be|com)).+\z}
+    .freeze
 
   belongs_to :department
   belongs_to :school
@@ -23,6 +24,7 @@ class Project < ApplicationRecord
 
   def video_type
     return :vimeo if video.include?('vimeo')
+
     :youtube
   end
 

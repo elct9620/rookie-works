@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreatePosts < ActiveRecord::Migration[5.1]
   def change
     create_table :posts do |t|
@@ -13,6 +15,6 @@ class CreatePosts < ActiveRecord::Migration[5.1]
     end
 
     add_index :posts, :title
-    add_index :posts, [:user_id, :category, :status]
+    add_index :posts, %i[user_id category status]
   end
 end

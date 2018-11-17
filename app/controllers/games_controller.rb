@@ -13,6 +13,7 @@ class GamesController < ApplicationController
     @game = Game.new(permitted_params)
     @game.project.user = current_user
     return redirect_to projects_path if @game.save
+
     render :new
   end
 
@@ -20,6 +21,7 @@ class GamesController < ApplicationController
 
   def update
     return redirect_to projects_path if @game.update(permitted_params)
+
     render :edit
   end
 
