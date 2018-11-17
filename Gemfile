@@ -73,7 +73,7 @@ group :development do
   gem 'brakeman'
   gem 'bundler-audit', '~> 0.6.0'
   gem 'overcommit'
-  gem 'rubocop', '~> 0.52.1'
+  gem 'rubocop', '~> 0.60.0'
 
   # Console
   gem 'pry-rails'
