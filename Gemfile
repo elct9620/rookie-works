@@ -57,9 +57,13 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
   # Test
-  gem 'factory_bot'
+  gem 'database_rewinder'
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'shoulda', require: false
+  gem 'shoulda-matchers', require: false
+  gem 'simplecov', require: false
 end
 
 group :development do
