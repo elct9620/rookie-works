@@ -6,9 +6,9 @@ addons:
 env:
   global:
     - RAILS_ENV=test
-    - DATABASE_URL=postgresql://postgres@localhost/rookie-works
+    - DATABASE_URL=postgresql://postgres@localhost/rookie
 before_script:
-  - psql -c 'create database rookie-works;' -U postgres
+  - psql -c 'create database rookie;' -U postgres
 script:
   - bundle exec rails db:migrate
   - bundle exec rspec
