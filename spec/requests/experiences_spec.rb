@@ -3,6 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Experiences', type: :request do
+  let(:experience) { create(:experience) }
+
   describe 'GET /experiences' do
     subject { get experiences_path }
 
@@ -63,4 +65,6 @@ RSpec.describe 'Experiences', type: :request do
       it_behaves_like 'protected page', 200
     end
   end
+
+  it_behaves_like 'has comments on', Experience
 end
