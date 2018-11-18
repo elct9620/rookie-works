@@ -44,6 +44,9 @@ rspec:
   before_script:
     - curl -SLO https://nodejs.org/dist/v$NODE_VERSION/node-v${NODE_VERSION}-linux-x64.tar.xz && tar -xJf node-v${NODE_VERSION}-linux-x64.tar.xz -C /usr/local --strip-components=1;
     - bundle install --without development --path vendor
+    - curl -o- -L https://yarnpkg.com/install.sh | bash
+    - yarn install
+    - bin/webpack
   services:
     - postgres:9.6
   script:
