@@ -10,13 +10,14 @@ html[lang="#{I18n.locale}"]
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-    = render 'shared/tag_manager'
   body
     = render 'shared/tag_manager_noscript'
     = render 'shared/nav' unless fullscreen?
     = yield
     = render 'shared/footer' unless fullscreen?
+    = render 'shared/tag_manager'
     = render 'shared/facebook'
     = javascript_include_tag '//use.fontawesome.com/releases/v5.0.8/js/all.js'
     = javascript_include_tag Ckeditor.cdn_url
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+
