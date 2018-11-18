@@ -5,6 +5,7 @@ variables:
   POSTGRES_DB: rookie-works
   NODE_VERSION: 8.0.0
   DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB"
+  PATH: $HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH
 
 stages:
   - verify
