@@ -1,6 +1,8 @@
 新人設計師
 ===
 
+[![Build Status](https://travis-ci.org/elct9620/rookie-works.svg?branch=master)](https://travis-ci.org/elct9620/rookie-works) [![Maintainability](https://api.codeclimate.com/v1/badges/b7731dae36d40d8e7344/maintainability)](https://codeclimate.com/github/elct9620/rookie-works/maintainability) <a href="https://codeclimate.com/github/elct9620/rookie-works/test_coverage"><img src="https://api.codeclimate.com/v1/badges/b7731dae36d40d8e7344/test_coverage" /></a>
+
 ## 系統需求
 
 * Ruby 2.5.3
