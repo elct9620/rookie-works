@@ -41,7 +41,7 @@ RSpec.describe 'Experiences', type: :request do
     end
   end
 
-  describe 'GET /experiences/edit' do
+  describe 'GET /experiences/:id/edit' do
     let(:user) { create(:user) }
     let(:experience) { create(:experience, user: user) }
     subject { get edit_experience_path(experience) }
