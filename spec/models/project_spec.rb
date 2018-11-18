@@ -17,6 +17,38 @@ RSpec.describe Project, type: :model do
   it { should validate_presence_of(:description) }
   it { should validate_presence_of(:thumbnail) }
 
-  pending 'validates video format'
-  pending 'validates department'
+  describe '#video_type' do
+    let(:project) { create(:project, video: video) }
+    subject { project.video_type }
+
+    context 'is YouTube' do
+      let(:video) { 'https://www.youtube.com/watch?v=QBYZAZlH9cw' }
+      it { should eq(:youtube) }
+    end
+
+    context 'is Vimeo' do
+      let(:video) { 'https://vimeo.com/180770618' }
+      it { should eq(:vimeo) }
+    end
+  end
+
+  describe '#video_embed_url' do
+    let(:project) { create(:project, video: video) }
+    subject { project.video_embed_url }
+
+    context 'is YouTube' do
+      let(:video) { 'https://www.youtube.com/watch?v=QBYZAZlH9cw' }
+      it { should eq('https://www.youtube.com/embed/QBYZAZlH9cw') }
+
+      context 'with share link' do
+        let(:video) { 'https://youtu.be/QBYZAZlH9cw' }
+        it { should eq('https://www.youtube.com/embed/QBYZAZlH9cw') }
+      end
+    end
+
+    context 'is Vimeo' do
+      let(:video) { 'https://vimeo.com/180770618' }
+      it { should eq('https://player.vimeo.com/video/180770618') }
+    end
+  end
 end
