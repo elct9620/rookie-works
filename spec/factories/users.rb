@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :user do
-    email { Faker::Internal.email }
+    email { Faker::Internet.email }
     password { Devise.friendly_token[6..12] }
   end
 end
