@@ -10,7 +10,7 @@ env:
     - DATABASE_URL=postgresql://postgres@localhost/rookie
 before_script:
   - psql -c 'create database rookie;' -U postgres
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version version-number
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH="$HOME/.yarn/bin:$PATH"
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
