@@ -1,6 +1,7 @@
 language: ruby
 rvm:
   - 2.5.1
+node_js: 8.0.0
 addons:
   postgresql: 9.6
 env:
@@ -9,9 +10,12 @@ env:
     - DATABASE_URL=postgresql://postgres@localhost/rookie
 before_script:
   - psql -c 'create database rookie;' -U postgres
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version version-number
+  - export PATH="$HOME/.yarn/bin:$PATH"
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
+  - bin/webpack
 script:
   - bundle exec rails db:migrate
   - bundle exec rspec
