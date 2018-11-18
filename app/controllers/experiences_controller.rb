@@ -19,7 +19,8 @@ class ExperiencesController < ApplicationController
   end
 
   def create
-    return redirect_to experiences_path if build_post.update(post_params)
+    @post = build_post
+    return redirect_to experiences_path if @post.update(post_params)
 
     render :new
   end

@@ -6,6 +6,10 @@ FactoryBot.define do
     content { Faker::Lorem.paragraph(2) }
     user { create(:user) }
 
+    trait :published do
+      status { :published }
+    end
+
     trait :is_experience do
       category { :experience }
     end
