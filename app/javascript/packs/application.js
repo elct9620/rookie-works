@@ -1,6 +1,8 @@
 /* eslint no-console:0 */
 
 // Customize
+CKEDITOR.plugins.addExternal('imgur', '/ckeditor/plugins/imgur/', 'plugin.js');
+
 $(document).on('turbolinks:load', function() {
   $('.select2').select2({ theme: 'bootstrap' });
 
@@ -19,7 +21,10 @@ $(document).on('turbolinks:load', function() {
 
   // Ckeditor
   $('.rich').each(function() {
-    CKEDITOR.replace($(this).attr('id'), { customConfig: "<%= ActionController::Base.helpers.asset_path('ckeditor/config') %>" });
+    CKEDITOR.replace($(this).attr('id'), {
+      extraPlugins: 'imgur',
+      imgurClientID: '3e615942ad6e55e',
+    });
   });
 });
 
