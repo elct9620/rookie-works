@@ -39,13 +39,7 @@ zh-TW:
   home:
     index: &home_index
       description: 瀏覽今年設計科系畢業生作品
-      about: 關於這個網站
-      about_this_site:
-        >
-          <p><strong>2018/06/14</strong> - 心得投稿功能開放，歡迎分享畢業製作的心得</p>
-          <p><strong>2018/03/10</strong> - 目前暫時僅支援登陸遊戲類資料，其他類型作品仍在開發中</p>
-          <p><strong>2018/04/24</strong> - 加入收藏功能已經開放，登入後即可使用。</p>
-
+      news: 最新消息
       projects: 作品列表
       school:  篩選學校
       department: 篩選科系

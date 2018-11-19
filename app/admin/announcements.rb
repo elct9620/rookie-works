@@ -1,13 +1,12 @@
 # frozen_string_literal: true
 
-ActiveAdmin.register Experience do
-  permit_params :title, :status
+ActiveAdmin.register Announcement do
+  permit_params :title, :status, :content
 
   index do
     index_column
     column :title
     column :status
-    column :user
     column :published_at
     actions
   end
@@ -16,13 +15,8 @@ ActiveAdmin.register Experience do
     f.inputs do
       f.semantic_errors
       f.input :title
+      f.input :content
       f.input :status
-    end
-    panel 'Thumbnail' do
-      image_tag f.object.thumbnail_url(:thumb)
-    end
-    panel 'Preview' do
-      simple_format f.object.content
     end
     f.actions
   end

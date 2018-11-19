@@ -9,9 +9,9 @@
     .row
       .col-md-12
         .title-area
-          h2 = t('.about')
+          h2 = t('.news')
           .separator.separator-danger ✻
-          .description = sanitize t('.about_this_site')
+          .description = render @announcements
   .container
     .row
       .col-md-12

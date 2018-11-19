@@ -5,6 +5,7 @@ class HomeController < ApplicationController
 
   # TODO: Improve filter using FilterService or Search Model
   def index
+    @announcements = Announcement.recent(5)
     @q = Project.ransack(params[:q])
     @projects = @q.result(distinct: true)
 
