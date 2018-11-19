@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-ActiveAdmin.register Post do
+ActiveAdmin.register Experience do
   permit_params :title, :status
 
   index do
