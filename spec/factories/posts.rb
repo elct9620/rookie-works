@@ -4,14 +4,9 @@ FactoryBot.define do
   factory :post do
     title { Faker::Lorem.sentence }
     content { Faker::Lorem.paragraph(2) }
-    user { create(:user) }
 
     trait :published do
       status { :published }
-    end
-
-    trait :is_experience do
-      category { :experience }
     end
   end
 end
