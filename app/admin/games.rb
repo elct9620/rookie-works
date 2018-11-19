@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register Game do
+  menu parent: I18n.t('admin.menu.gallery')
+
   includes project: %i[school department]
 
   controller do

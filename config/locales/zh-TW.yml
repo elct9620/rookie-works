@@ -154,6 +154,10 @@ zh-TW:
       previous: 上一頁
       next: 下一頁
       truncate: "&hellip;"
+  admin:
+    menu:
+      school_config: 學系設定
+      gallery: 收錄資訊
   date:
     formats:
       default: "%Y-%m-%d"
@@ -163,6 +167,14 @@ zh-TW:
     models:
       project: 作品
       post: 文章
+      experience: 心得
+      announcement: 公告
+      admin_user: 管理員
+      school: 學校
+      department: 科系
+      schools_department: 學系關聯
+      exhibition: 展覽
+      game: 遊戲作品
     attributes:
       user:
         email: 信箱

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register Project do
+  menu parent: I18n.t('admin.menu.gallery')
+
   includes :school, :department, :user
   permit_params :name, :description, :school_id, :department_id,
                 :website, :video

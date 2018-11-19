@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register AdminUser do
+  # TODO: Add permission for limit create new admin
+  menu if: proc { current_admin_user.id == 1 }
+
   permit_params :email, :password, :password_confirmation
 
   index do
