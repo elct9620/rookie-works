@@ -5316,6 +5316,11 @@ querystringify@^2.0.0:
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.0.tgz#7ded8dfbf7879dcc60d0a644ac6754b283ad17ef"
   integrity sha512-sluvZZ1YiTLD5jsqZcDmFyV2EwToyXZBfpoVOmktMmW+VEnhgakFHnasVph65fOjGPTWN0Nw3+XQaSeMayr0kg==
 
+quicklink@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/quicklink/-/quicklink-1.0.0.tgz#71cb32be603d0ded93a7a48cf3c7e101ea4b1f6d"
+  integrity sha512-Zk0+RLevrrrrPzcPO9IKBAbmtFrinDP0ifSxeft5AG9eI+lBsvQ2XFjH7kceuS+LNehtZatQX+3LyEDYAPpmrg==
+
 rails-erb-loader@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/rails-erb-loader/-/rails-erb-loader-5.5.0.tgz#fcf698f693e6a3b9b86d0d657040c2bfd8b88e28"

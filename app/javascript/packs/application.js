@@ -1,4 +1,5 @@
 /* eslint no-console:0 */
+import quicklink from 'quicklink/dist/quicklink.mjs'
 
 // Customize
 CKEDITOR.plugins.addExternal('imgur', '/ckeditor/plugins/imgur/', 'plugin.js');
@@ -26,13 +27,15 @@ $(document).on('turbolinks:load', function() {
       imgurClientID: '3e615942ad6e55e',
     });
   });
+
+  quicklink();
 });
 
 $(document).on('turbolinks:before-cache', function() {
   $('.select2-hidden-accessible').select2('destroy');
 });
 
-WebFontConfig = {
+const WebFontConfig = {
   google: {
     families: ['Cambo', 'Lato:400,700']
   }
@@ -93,7 +96,7 @@ $(document).on('turbolinks:load', function(event){
         content_opacity = 1;
     }
 
-    $navbar = $('.navbar[color-on-scroll]');
+    const $navbar = $('.navbar[color-on-scroll]');
     scroll_distance = $navbar.attr('color-on-scroll') || 500;
 
     $('.google-map').each(function(){
@@ -225,7 +228,7 @@ gaia = {
                   var window_bottom = $(window).scrollTop();
                   var $image = $elem.children('.image');
 
-            	  oVal = ((window_bottom - parent_top) / 3);
+            	  const oVal = ((window_bottom - parent_top) / 3);
                   $image.css('transform','translate3d(0px, ' + oVal + 'px, 0px)');
         	    }
             });
