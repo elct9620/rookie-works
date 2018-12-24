@@ -8,6 +8,7 @@ FactoryBot.define do
     school { create(:school) }
     user { create(:user) }
     result { create(:game) }
+    published_year { Date.current.year }
     thumbnail do
       Rack::Test::UploadedFile.new(
         Rails.root.join('spec', 'support', 'images', 'project', 'thumbnail.jpg'),
