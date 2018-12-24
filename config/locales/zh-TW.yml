@@ -193,6 +193,7 @@ zh-TW:
         website: 網站
         thumbnail: 美術圖
         video: 影片
+        published_year: 發表年份
       game:
         platform: 平台
         genre: 類型
@@ -205,8 +206,11 @@ zh-TW:
           attributes:
             department:
               inclusion: 並不存在於該學校
+            published_year:
+              out_of_range: 尚未支援登錄該年份資料
     help:
       project:
         school_id: 學校或科系找不到時請聯絡管理員新增
         thumbnail: 建議上傳 860 x 520 以上的圖片以獲得最佳顯示效果
         video: 貼上 Youtube 或是 Vimeo 的影片連結即可自動顯示
+        published_year: 作品第一次公開的年份（Ex. 在 2019 年畢業展，請選 2019 年）

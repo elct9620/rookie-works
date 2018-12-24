@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180622121526) do
+ActiveRecord::Schema.define(version: 20181224153619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,7 +125,9 @@ ActiveRecord::Schema.define(version: 20180622121526) do
     t.string "video"
     t.string "result_type"
     t.bigint "result_id"
+    t.integer "published_year"
     t.index ["department_id"], name: "index_projects_on_department_id"
+    t.index ["published_year"], name: "index_projects_on_published_year"
     t.index ["result_type", "result_id"], name: "index_projects_on_result_type_and_result_id"
     t.index ["school_id"], name: "index_projects_on_school_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
