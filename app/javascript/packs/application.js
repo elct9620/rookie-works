@@ -116,7 +116,7 @@ $(document).on('turbolinks:before-cache', function() {
   $('html').removeClass('nav-open');
   gaia.misc.navbar_menu_visible = 0;
   $('#bodyClick').remove();
-  $toggle = $('.navbar-toggle');
+  var $toggle = $('.navbar-toggle');
   $toggle.removeClass('toggled');
 });
 
@@ -162,7 +162,7 @@ $('a[data-scroll="true"]').click(function(e){
 
 });
 
-gaia = {
+window.gaia = {
     misc:{
         navbar_menu_visible: 0
     },
@@ -206,6 +206,7 @@ gaia = {
     },
 
     checkScrollForTransparentNavbar: debounce(function() {
+            const $navbar = $('.navbar[color-on-scroll]');
             if($(document).scrollTop() > scroll_distance ) {
                 if(transparent) {
                     transparent = false;
