@@ -22,6 +22,8 @@
       .col-md-12
         = search_form_for @q, url: root_path do |f|
           .form-group
+            = f.select :published_year_in, Project.available_years, { include_blank: true, selected: params.dig(:q, :published_year_in) || current_year }, { multiple: true, class: 'select2', 'data-placeholder': t('.published_year') }
+          .form-group
             = f.collection_select :school_id_in, School.all, :id, :name, { include_blank: true }, { multiple: true, class: 'select2', 'data-placeholder': t('.school') }
           .form-group
             = f.collection_select :department_id_in, Department.all, :id, :name, { include_blank: true }, { multiple: true, class: 'select2', 'data-placeholder': t('.department') }

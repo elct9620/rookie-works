@@ -41,6 +41,7 @@ zh-TW:
       description: 瀏覽今年設計科系畢業生作品
       news: 最新消息
       projects: 作品列表
+      published_year: 發表年份
       school:  篩選學校
       department: 篩選科系
       exhibition: 篩選展覽
