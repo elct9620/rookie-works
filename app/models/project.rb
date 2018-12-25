@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Project < ApplicationRecord
-  PUBLISHABLE_SINCE = 2018
+  PUBLISHABLE_SINCE = 2005
   VIDEO_FORMAT =
     %r{\Ahttp[s]?+:\/\/(?:(www|player)\.)?(youtu(be)?|vimeo)(?:\.(be|com)).+\z}
     .freeze
