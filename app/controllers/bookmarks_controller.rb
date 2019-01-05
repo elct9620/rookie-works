@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
 class BookmarksController < ApplicationController
-  before_action :authenticate_user!
+  include PlatformFilter
+
   before_action :picked_platform, only: :index
+  before_action :authenticate_user!
 
   def index
     @projects = query.result(distinct: true)
-
-    include_platform if picked_platform.any?
+    @projects = include_platform(@projects)
 
     @projects =
       @projects
@@ -38,15 +39,5 @@ class BookmarksController < ApplicationController
       Project
       .where(id: current_user.bookmarks.pluck(:project_id))
       .ransack(params[:q])
-  end
-
-  def include_platform
-    @projects = @projects.where(result: Game.platform_is(@picked_platform))
-  end
-
-  def picked_platform
-    @picked_platform ||=
-      (params[:q]&.delete(:result_of_Game_type_platform_in) || [])
-      .reject(&:blank?)
   end
 end

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
+  include PlatformFilter
+
   before_action :picked_platform
   helper_method :current_year
 
@@ -9,23 +11,13 @@ class HomeController < ApplicationController
     @announcements = Announcement.recent(5)
     @q = Project.ransack(params[:q])
     @projects = @q.result(distinct: true)
+    @projects = include_platform(@projects)
 
-    include_platform if picked_platform.any?
     filter_default_years if params[:q].nil?
     load_projects
   end
 
   private
-
-  def include_platform
-    @projects = @projects.where(result: Game.platform_is(@picked_platform))
-  end
-
-  def picked_platform
-    @picked_platform ||=
-      (params[:q]&.delete(:result_of_Game_type_platform_in) || [])
-      .reject(&:blank?)
-  end
 
   def filter_default_years
     @projects = @projects.where(published_year: current_year)
