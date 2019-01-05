@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
+  rescue_from ActiveRecord::RecordNotFound, with: :render_404
+
   def current_page
     params[:page].to_i
   end
@@ -14,5 +16,9 @@ class ApplicationController < ActionController::Base
       :account_update,
       keys: %i[display_name team]
     )
+  end
+
+  def render_404
+    render 'errors/404', status: :not_found
   end
 end

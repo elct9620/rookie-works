@@ -108,6 +108,10 @@ zh-TW:
       plan_image: 展場平面圖
       projects: 參展作品
       description: 查詢與瀏覽 %{year} 年參與 %{name} 的畢業專題或學生作品。
+  errors:
+    :404:
+      title: 找不到這個頁面
+      description: 是不是迷失了方向呢？試試點選上面的選到回到正確的頁面上吧！
   experience_mailer:
     new_experience_submit: 收到新的心得投稿 - %{title}
     notify_review:
