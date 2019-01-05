@@ -5,7 +5,9 @@ import quicklink from 'quicklink/dist/quicklink.mjs'
 CKEDITOR.plugins.addExternal('imgur', '/ckeditor/plugins/imgur/', 'plugin.js');
 
 $(document).on('turbolinks:load', function() {
-  $('.select2').select2({ theme: 'bootstrap' });
+  setTimeout(() => {
+    $('.select2').select2({ theme: 'bootstrap' });
+  }, 50)
 
   // Tag Manager
   if (typeof window.dataLayer !== "undefined" && window.dataLayer !== null) {
