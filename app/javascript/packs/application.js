@@ -171,7 +171,7 @@ window.gaia = {
     initRightMenu: function(){
 
          if(!navbar_initialized){
-            $toggle = $('.navbar-toggle');
+            var $toggle = $('.navbar-toggle');
             $toggle.click(function (){
 
                 if(gaia.misc.navbar_menu_visible == 1) {
