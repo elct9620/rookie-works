@@ -187,7 +187,7 @@ window.gaia = {
                         $toggle.addClass('toggled');
                     }, 580);
 
-                    div = '<div id="bodyClick"></div>';
+                    var div = '<div id="bodyClick"></div>';
                     $(div).appendTo("body").click(function() {
                         $('html').removeClass('nav-open');
                         gaia.misc.navbar_menu_visible = 0;
