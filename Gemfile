@@ -18,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 
 # Front-end
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'bootstrap_form', '~> 2.7'
 gem 'ckeditor'
 gem 'jquery-rails'
