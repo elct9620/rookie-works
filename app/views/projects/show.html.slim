@@ -36,7 +36,7 @@ section.section.section-header-blog
         p = t("game.genre.#{@project.result.genre}")
         h3.social-title = t('.links')
         .social-buttons-blog-posts
-          = link_to santitize(@project.website), class: 'btn btn-social btn-simple btn-padding' do
+          = link_to escape_once(@project.website), class: 'btn btn-social btn-simple btn-padding' do
             i.fa.fa-home
         p
           .fb-share-button[data-href="#{original_url}" data-layout="button_count"]
