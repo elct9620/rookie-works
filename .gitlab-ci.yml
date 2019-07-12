@@ -42,10 +42,7 @@ bundle-audit:
 rspec:
   stage: test
   before_script:
-    # - curl -SLO https://nodejs.org/dist/v$NODE_VERSION/node-v${NODE_VERSION}-linux-x64.tar.xz && tar -xJf node-v${NODE_VERSION}-linux-x64.tar.xz -C /usr/local --strip-components=1;
     - bundle install --without development --path vendor
-    # - curl -o- -L https://yarnpkg.com/install.sh | bash
-    # - export PATH=$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH
     - yarn install
     - bin/webpack
   services:
@@ -54,26 +51,18 @@ rspec:
     - bundle exec rake db:migrate
     - bundle exec rspec --exclude-pattern spec/features/**/*_spec.rb
 
-feature:
+# Expose CI_MERGE_REQUEST variable
+# https://gitlab.com/gitlab-org/gitlab-ce/issues/59689
+review:
   stage: test
   before_script:
-    # - curl -SLO https://nodejs.org/dist/v$NODE_VERSION/node-v${NODE_VERSION}-linux-x64.tar.xz && tar -xJf node-v${NODE_VERSION}-linux-x64.tar.xz -C /usr/local --strip-components=1;
     - bundle install --without development --path vendor
-    # - curl -o- -L https://yarnpkg.com/install.sh | bash
-    # - export PATH=$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH
     - yarn install
     - bin/webpack
-    # - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-    # - echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list
-    # - apt-get update -yqqq
-    # - apt-get install -y google-chrome-stable > /dev/null 2>&1
-    # - sed -i 's/"$@"/--no-sandbox "$@"/g' /opt/google/chrome/google-chrome
-    # - wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip
-    # - unzip /tmp/chromedriver.zip chromedriver -d /usr/bin/
-    # - rm /tmp/chromedriver.zip
-    # - chmod ugo+rx /usr/bin/chromedriver
   services:
     - postgres:9.6
   script:
     - bundle exec rake db:migrate
     - yarn run percy exec -- bundle exec rspec spec/features
+  only:
+    - merge_requests
