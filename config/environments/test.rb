@@ -39,7 +39,7 @@ Rails.application.configure do
   config.action_mailer.asset_host = 'https://rookie.works'
   config.action_mailer.default_url_options = { host: 'https://rookie.works' }
 
-  config.asset_host = 'https://rookie.works'
+  # config.asset_host = 'https://rookie.works'
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
