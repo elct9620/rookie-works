@@ -25,6 +25,6 @@ before_script:
   - bin/webpack
 script:
   - bundle exec rails db:migrate
-  - bundle exec rspec
+  - bundle exec rspec --exclude-pattern spec/features/**/*_spec.rb
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
