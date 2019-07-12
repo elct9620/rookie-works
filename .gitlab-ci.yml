@@ -52,4 +52,4 @@ rspec:
     - postgres:9.6
   script:
     - bundle exec rake db:migrate
-    - bundle exec rspec
+    - bundle exec rspec --exclude-pattern spec/features/**/*_spec.rb
