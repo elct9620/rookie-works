@@ -64,6 +64,11 @@ group :development, :test do
   gem 'shoulda', require: false
   gem 'shoulda-matchers', require: false
   gem 'simplecov', require: false
+
+  gem 'capybara', require: false
+  gem 'percy-capybara', '~> 4.0.0'
+  gem 'selenium-webdriver', require: false
+  gem 'webdrivers', require: false
 end
 
 group :development do
