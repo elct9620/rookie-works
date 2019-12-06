@@ -36,8 +36,9 @@ bundle-audit:
     - export LANG=C.UTF-8
     - export LC_ALL=C.UTF-8
     - gem install bundler-audit
+    - bundle audit --update --ignore CVE-2015-9284 # Ignore OmniAuth CVE
   script:
-    - bundle audit
+    - bundle audit --ignore CVE-2015-9284 # Ignore OmniAuth CVE
 
 rspec:
   stage: test
