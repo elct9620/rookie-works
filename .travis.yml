@@ -11,9 +11,9 @@ env:
   global:
     - RAILS_ENV=test
     - DATABASE_URL=postgresql://postgres@localhost/rookie
-  before_install:
-    - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
-    - gem install bundler -v '< 2'
+before_install:
+  - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
+  - gem install bundler -v '< 2'
 before_script:
   - psql -c 'create database rookie;' -U postgres
   - curl -o- -L https://yarnpkg.com/install.sh | bash
