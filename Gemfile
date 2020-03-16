@@ -45,7 +45,7 @@ gem 'dotenv-rails'
 gem 'kaminari'
 gem 'rails-i18n'
 gem 'ransack'
-gem 'rollbar', '~> 2.15.0'
+gem 'rollbar', '~> 2.24.0'
 gem 'sitemap_generator'
 gem 'whenever', require: false
 

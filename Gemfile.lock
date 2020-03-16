@@ -286,8 +286,7 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.4)
-    rollbar (2.15.6)
-      multi_json
+    rollbar (2.24.0)
     rspec-core (3.9.1)
       rspec-support (~> 3.9.1)
     rspec-expectations (3.9.1)
@@ -445,7 +444,7 @@ DEPENDENCIES
   rails (~> 5.1.5)
   rails-i18n
   ransack
-  rollbar (~> 2.15.0)
+  rollbar (~> 2.24.0)
   rspec-rails
   rubocop (~> 0.80.1)
   rubocop-performance
