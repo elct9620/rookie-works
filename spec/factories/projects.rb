@@ -11,7 +11,7 @@ FactoryBot.define do
     published_year { Date.current.year }
     thumbnail do
       Rack::Test::UploadedFile.new(
-        Rails.root.join('spec', 'support', 'images', 'project', 'thumbnail.jpg'),
+        Rails.root.join('spec/support/images/project/thumbnail.jpg'),
         'image/jpeg'
       )
     end

@@ -17,7 +17,9 @@ cache:
 rubocop:
   stage: verify
   before_script:
-    - gem install rubocop -v 0.60.0
+    - gem install rubocop -v 0.80.1
+    - gem install rubocop-performance
+    - gem install rubocop-rails
   script:
     - rubocop
 

@@ -10,7 +10,7 @@ RSpec.shared_examples 'has comments on' do |model|
 
   describe "POST /#{model.model_name.plural}/:id/comments" do
     let(:resource_name) { resource.model_name }
-    let(:path) { polymorphic_path([resource_name.singular, :comments], :"#{resource_name.singular}_id" => resource.id) }
+    let(:path) { polymorphic_path([resource_name.singular, :comments], "#{resource_name.singular}_id": resource.id) }
     let(:params) { { content: Faker::Lorem.paragraph } }
 
     it do

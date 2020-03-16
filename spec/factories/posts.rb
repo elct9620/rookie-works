@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :post do
     title { Faker::Lorem.sentence }
-    content { Faker::Lorem.paragraph(2) }
+    content { Faker::Lorem.paragraph(sentence_count: 2) }
 
     trait :published do
       status { :published }

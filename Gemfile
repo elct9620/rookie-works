@@ -49,10 +49,6 @@ gem 'rollbar', '~> 2.15.0'
 gem 'sitemap_generator'
 gem 'whenever', require: false
 
-group :production do
-  gem 'passenger', '~> 5.2.1'
-end
-
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
@@ -82,7 +78,9 @@ group :development do
   gem 'brakeman'
   gem 'bundler-audit', '~> 0.6.0'
   gem 'overcommit'
-  gem 'rubocop', '~> 0.60.0'
+  gem 'rubocop', '~> 0.80.1', require: false
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
 
   # Console
   gem 'pry-rails'

@@ -21,7 +21,7 @@ section.section.section-header-blog
             = link_to t('.download'), @project.result.download_link, class: 'btn btn-fill btn-lg btn-danger'
         - if user_signed_in?
           p
-            = bookmark_button
+            = bookmark_button(project)
         h3.social-title = t('.school')
         p = @project.school.name
         h3.social-title = t('.department')
