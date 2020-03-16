@@ -3,6 +3,7 @@ image: circleci/ruby:2.5-node-browsers
 variables:
   RAILS_ENV: test
   POSTGRES_DB: rookie-works
+  POSTGRES_PASSWORD: postgres
   DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB"
   # NODE_VERSION: 8.0.0
 
@@ -49,7 +50,7 @@ rspec:
     - yarn install
     - bin/webpack
   services:
-    - postgres:9.6
+    - postgres:9.6-alpine
   script:
     - bundle exec rake db:migrate
     - bundle exec rspec --exclude-pattern spec/features/**/*_spec.rb
@@ -63,7 +64,7 @@ review:
     - yarn install
     - bin/webpack
   services:
-    - postgres:9.6
+    - postgres:9.6-alpine
   script:
     - bundle exec rake db:migrate
     - yarn run percy exec -- bundle exec rspec spec/features
