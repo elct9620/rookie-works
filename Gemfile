@@ -61,6 +61,14 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
   gem 'simplecov', require: false
 
+  # Linter
+  gem 'brakeman'
+  gem 'bundler-audit', '~> 0.6.0'
+  gem 'overcommit'
+  gem 'rubocop', '~> 0.80.1', require: false
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+
   gem 'capybara', require: false
   gem 'percy-capybara', '~> 4.0.0'
   gem 'selenium-webdriver', require: false
@@ -73,14 +81,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
-
-  # Checker
-  gem 'brakeman'
-  gem 'bundler-audit', '~> 0.6.0'
-  gem 'overcommit'
-  gem 'rubocop', '~> 0.80.1', require: false
-  gem 'rubocop-performance'
-  gem 'rubocop-rails'
 
   # Console
   gem 'pry-rails'
