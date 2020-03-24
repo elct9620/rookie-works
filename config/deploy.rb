@@ -27,7 +27,7 @@ ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, 'config/secrets.yml'
+append :linked_files, 'config/secrets.yml', 'config/elastic_apm.yml'
 
 # Default value for linked_dirs is []
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'node_modules', 'public/shared', 'public/uploads'

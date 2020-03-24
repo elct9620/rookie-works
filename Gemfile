@@ -42,6 +42,7 @@ gem 'meta-tags'
 
 # Misc
 gem 'dotenv-rails'
+gem 'elastic-apm'
 gem 'kaminari'
 gem 'rails-i18n'
 gem 'ransack'
