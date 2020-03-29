@@ -58,6 +58,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'rspec_junit_formatter'
   gem 'shoulda', require: false
   gem 'shoulda-matchers', require: false
   gem 'simplecov', require: false
