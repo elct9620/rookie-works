@@ -10,7 +10,7 @@ end
 # Rails Builtin
 gem 'bcrypt', '~> 3.1.7'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 5.0'
 gem 'rails', '~> 5.2.2'
 gem 'sassc-rails'
 gem 'turbolinks', '~> 5'
