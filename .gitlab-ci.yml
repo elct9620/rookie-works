@@ -52,19 +52,3 @@ rspec:
   script:
     - bundle exec rake db:migrate
     - bundle exec rspec --exclude-pattern spec/features/**/*_spec.rb
-
-# Expose CI_MERGE_REQUEST variable
-# https://gitlab.com/gitlab-org/gitlab-ce/issues/59689
-review:
-  stage: test
-  before_script:
-    - bundle install --without development --path vendor
-    - yarn install
-    - bin/webpack
-  services:
-    - postgres:9.6-alpine
-  script:
-    - bundle exec rake db:migrate
-    - yarn run percy exec -- bundle exec rspec spec/features
-  only:
-    - merge_requests
