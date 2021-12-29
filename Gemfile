@@ -42,11 +42,9 @@ gem 'meta-tags'
 
 # Misc
 gem 'dotenv-rails'
-gem 'elastic-apm'
 gem 'kaminari'
 gem 'rails-i18n'
 gem 'ransack'
-gem 'rollbar', '~> 2.24.0'
 gem 'sitemap_generator'
 gem 'whenever', require: false
 
@@ -57,7 +55,6 @@ group :development, :test do
   gem 'database_rewinder'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'rspec_junit_formatter'
   gem 'rspec-rails'
   gem 'shoulda', require: false
   gem 'shoulda-matchers', require: false
@@ -70,11 +67,6 @@ group :development, :test do
   gem 'rubocop', '~> 1.24.0', require: false
   gem 'rubocop-performance'
   gem 'rubocop-rails'
-
-  gem 'capybara', require: false
-  gem 'percy-capybara', '~> 4.0.0'
-  gem 'selenium-webdriver', require: false
-  gem 'webdrivers', require: false
 end
 
 group :development do
