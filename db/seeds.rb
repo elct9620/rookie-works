@@ -1,5 +1,3 @@
 # frozen_string_literal: true
 
-if Rails.env.development?
-  AdminUser.create!(email: 'admin@example.com', password: 'password')
-end
+AdminUser.create!(email: 'admin@example.com', password: 'password') if Rails.env.development?

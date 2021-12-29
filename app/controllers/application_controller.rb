@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  rescue_from ActiveRecord::RecordNotFound, with: :render_404
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
   def current_page
     params[:page].to_i
@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     )
   end
 
-  def render_404
+  def render_not_found
     render 'errors/404', status: :not_found
   end
 end

@@ -12,6 +12,6 @@ module PlatformFilter
   def picked_platform
     @picked_platform ||=
       (params[:q]&.delete(:result_of_Game_type_platform_in) || [])
-      .reject(&:blank?)
+      .compact_blank
   end
 end

@@ -18,7 +18,7 @@ class PostThumbnailUploader < CarrierWave::Uploader::Base
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url(*)
     ActionController::Base.helpers.image_url(
-      'fallback/' + ['post', version_name, 'default.jpg'].compact.join('_')
+      "fallback/#{['post', version_name, 'default.jpg'].compact.join('_')}"
     )
   end
 

@@ -11,15 +11,15 @@ end
 gem 'bcrypt', '~> 3.1.7'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 5.0'
-gem 'rails', '~> 5.2.2'
+gem 'rails', '~> 6.1.4.4'
 gem 'sassc-rails'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 5.0'
 
 # Front-end
-gem 'bootstrap-sass', '~> 3.4.1'
 gem 'bootstrap_form', '~> 2.7'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'ckeditor', '~> 4.2'
 gem 'jquery-rails'
 gem 'select2-rails', '~> 4.0.3'
@@ -57,17 +57,17 @@ group :development, :test do
   gem 'database_rewinder'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'rspec-rails'
   gem 'rspec_junit_formatter'
+  gem 'rspec-rails'
   gem 'shoulda', require: false
   gem 'shoulda-matchers', require: false
   gem 'simplecov', require: false
 
   # Linter
   gem 'brakeman'
-  gem 'bundler-audit', '~> 0.6.0'
+  gem 'bundler-audit'
   gem 'overcommit'
-  gem 'rubocop', '~> 0.80.1', require: false
+  gem 'rubocop', '~> 1.24.0', require: false
   gem 'rubocop-performance'
   gem 'rubocop-rails'
 

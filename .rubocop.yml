@@ -5,6 +5,8 @@ require:
 AllCops:
   TargetRubyVersion: 2.6.5
   DisplayCopNames: true
+  SuggestExtensions: false
+  NewCops: enable
   Exclude:
     - bin/*
     - vendor/ruby/**/*

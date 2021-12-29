@@ -24,8 +24,8 @@ class Post < ApplicationRecord
   scope :latest, -> { order(published_at: :desc) }
 
   before_save :set_publish_time
-  after_commit :notify_reviewer, on: :create
   after_update :notify_user_published
+  after_commit :notify_reviewer, on: :create
 
   private
 

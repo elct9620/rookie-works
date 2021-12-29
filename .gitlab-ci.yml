@@ -18,6 +18,7 @@ cache:
 rubocop:
   stage: verify
   before_script:
+    - gem install bundler:2.3.3
     - bundle install --without development --path vendor
   script:
     - bundle exec rubocop
@@ -27,6 +28,7 @@ brakeman:
   before_script:
     - export LANG=C.UTF-8
     - export LC_ALL=C.UTF-8
+    - gem install bundler:2.3.3
     - gem install brakeman
   script:
     - brakeman
@@ -36,6 +38,7 @@ bundle-audit:
   before_script:
     - export LANG=C.UTF-8
     - export LC_ALL=C.UTF-8
+    - gem install bundler:2.3.3
     - gem install bundler-audit
     - bundle audit --update --ignore CVE-2015-9284 # Ignore OmniAuth CVE
   script:
@@ -44,6 +47,7 @@ bundle-audit:
 rspec:
   stage: test
   before_script:
+    - gem install bundler:2.3.3
     - bundle install --without development --path vendor
     - yarn install
     - bin/webpack
@@ -51,9 +55,4 @@ rspec:
     - postgres:9.6-alpine
   script:
     - bundle exec rake db:migrate
-    - bundle exec rspec --exclude-pattern spec/features/**/*_spec.rb --format RspecJunitFormatter --out rspec.xml
-  artifacts:
-    paths:
-      - rspec.xml
-    reports:
-      junit: rspec.xml
+    - bundle exec rspec --exclude-pattern spec/features/**/*_spec.rb
