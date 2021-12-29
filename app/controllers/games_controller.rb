@@ -49,7 +49,7 @@ class GamesController < ApplicationController
   def project_attributes
     [
       :name, :description, :school_id, :video, :published_year,
-      :department_id, :website, :thumbnail, exhibition_ids: []
+      :department_id, :website, :thumbnail, { exhibition_ids: [] }
     ]
   end
 end

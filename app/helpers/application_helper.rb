@@ -4,9 +4,8 @@ module ApplicationHelper
   def fullscreen?
     return unless params[:controller] == 'devise/sessions'
 
-    unless params[:controller] == 'devise/registrations'
-      return unless params[:action] == 'new'
-    end
+    return if params[:controller] != 'devise/registrations' && params[:action] != 'new'
+
     true
   end
 

@@ -3,7 +3,7 @@
 class Project < ApplicationRecord
   PUBLISHABLE_SINCE = 2005
   VIDEO_FORMAT =
-    %r{\Ahttp[s]?+:\/\/(?:(www|player)\.)?(youtu(be)?|vimeo)(?:\.(be|com)).+\z}
+    %r{\Ahttps?+://(?:(www|player)\.)?(youtu(be)?|vimeo)(?:\.(be|com)).+\z}
     .freeze
 
   belongs_to :department
