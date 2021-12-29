@@ -43,10 +43,15 @@ gem 'meta-tags'
 # Misc
 gem 'dotenv-rails'
 gem 'kaminari'
+gem 'openbox'
 gem 'rails-i18n'
 gem 'ransack'
 gem 'sitemap_generator'
 gem 'whenever', require: false
+
+# Ruby 3.1
+# NOTE: Remove after dependency resolved
+gem 'net-smtp'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -75,6 +80,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
+
+  # Container
+  gem 'boxing'
 
   # Console
   gem 'pry-rails'

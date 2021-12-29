@@ -1,6 +1,7 @@
+# TODO: Replaced with GitHub Actions
 language: ruby
 rvm:
-  - 2.6.5
+  - 3.1.0
 cache:
   - bundler
   - yarn
