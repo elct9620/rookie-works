@@ -79,11 +79,6 @@ group :development do
   # Console
   gem 'pry-rails'
 
-  # Deployment
-  gem 'capistrano-passenger'
-  gem 'capistrano-rails'
-  gem 'capistrano-upload-config'
-
   # Debug
   gem 'letter_opener'
 end
