@@ -49,6 +49,10 @@ gem 'ransack'
 gem 'sitemap_generator'
 gem 'whenever', require: false
 
+# Ruby 3.1
+# NOTE: Remove after dependency resolved
+gem 'net-smtp'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
