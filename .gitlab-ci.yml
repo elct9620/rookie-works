@@ -49,8 +49,6 @@ rspec:
   before_script:
     - gem install bundler:2.3.3
     - bundle install --without development --path vendor
-    - yarn install
-    - bin/webpack
   services:
     - postgres:9.6-alpine
   script:
