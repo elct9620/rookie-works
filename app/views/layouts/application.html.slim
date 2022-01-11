@@ -9,7 +9,7 @@ html[lang="#{I18n.locale}"]
     meta[content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport']
     link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap"
     = csrf_meta_tags
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    / TODO: Replace with ImportMAP
   body
     = render 'shared/tag_manager_noscript'
     = render 'shared/nav' unless fullscreen?
