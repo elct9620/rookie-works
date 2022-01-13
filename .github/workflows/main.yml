@@ -1,0 +1,45 @@
+name: Rails
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        ruby:
+          - 3.1
+
+    services:
+        postgres:
+          image: postgres
+          env:
+            POSTGRES_PASSWORD: postgres
+          options: >-
+            --health-cmd pg_isready
+            --health-interval 10s
+            --health-timeout 5s
+            --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby }}
+        bundler-cache: true
+    - name: Run Migration
+      run: bundle exec db:migrate
+      env:
+        DATABASE_URL: "postgres://postgres:postgres@localhost/postgres"
+    - name: Run RSpec
+      run: bundle exec rspec
+      env:
+        DATABASE_URL: "postgres://postgres:postgres@localhost/postgres"
