@@ -1,7 +1,7 @@
 .contact-form
-  = bootstrap_form_for(@game) do |gf|
+  = form_for(@game) do |gf|
     = gf.fields_for :project do |f|
-      = f.errors_on :department
+      / TODO: Display :department errors
       = f.text_field :name, class: 'form-control-plain', autofocus: true
       = f.text_area :description, class: 'rich'
       = f.select :published_year, Project.available_years, {}, class: 'select2'
