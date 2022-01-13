@@ -14,7 +14,6 @@ gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.4.4'
 gem 'sassc-rails'
 gem 'turbolinks', '~> 5'
-gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 5.0'
 
 # Front-end

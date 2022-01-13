@@ -1,56 +1,6 @@
-image: circleci/ruby:2.6-node-browsers
+include:
+  remote: https://raw.githubusercontent.com/elct9620/ruby-gitlab-ci/main/examples/containerize-rails.yml
 
 variables:
-  RAILS_ENV: test
-  POSTGRES_DB: rookie-works
-  POSTGRES_PASSWORD: postgres
-  DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB"
-  # NODE_VERSION: 8.0.0
-
-stages:
-  - verify
-  - test
-
-cache:
-  paths:
-    - vendor/ruby
-
-rubocop:
-  stage: verify
-  before_script:
-    - gem install bundler:2.3.3
-    - bundle install --without development --path vendor
-  script:
-    - bundle exec rubocop
-
-brakeman:
-  stage: verify
-  before_script:
-    - export LANG=C.UTF-8
-    - export LC_ALL=C.UTF-8
-    - gem install bundler:2.3.3
-    - gem install brakeman
-  script:
-    - brakeman
-
-bundle-audit:
-  stage: verify
-  before_script:
-    - export LANG=C.UTF-8
-    - export LC_ALL=C.UTF-8
-    - gem install bundler:2.3.3
-    - gem install bundler-audit
-    - bundle audit --update --ignore CVE-2015-9284 # Ignore OmniAuth CVE
-  script:
-    - bundle audit --ignore CVE-2015-9284 # Ignore OmniAuth CVE
-
-rspec:
-  stage: test
-  before_script:
-    - gem install bundler:2.3.3
-    - bundle install --without development --path vendor
-  services:
-    - postgres:9.6-alpine
-  script:
-    - bundle exec rake db:migrate
-    - bundle exec rspec --exclude-pattern spec/features/**/*_spec.rb
+  RUBY_VERSION: 3.1.0
+  ASSETS_PRECOMPILE: 'yes'
