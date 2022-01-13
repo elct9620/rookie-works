@@ -21,6 +21,8 @@ jobs:
         postgres:
           image: postgres
           env:
+            POSTGRES_USER: rookie
+            POSTGRES_PASSWORD: rookie
             POSTGRES_PASSWORD: postgres
           options: >-
             --health-cmd pg_isready
@@ -41,7 +43,7 @@ jobs:
       run: bundle exec rake db:migrate
       env:
         RAILS_ENV: test
-        DATABASE_URL: "postgres://postgres:postgres@localhost/postgres"
+        DATABASE_URL: "postgres://rookie:rookie@localhost/rookie"
     - name: Run RSpec
       run: bundle exec rspec
       env:
