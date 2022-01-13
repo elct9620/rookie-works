@@ -2,7 +2,7 @@
   .container
     .contact-form
       - if user_signed_in?
-        = bootstrap_form_for([@post, @comment], remote: true) do |f|
+        = form_for([@post, @comment], remote: true) do |f|
           - if flash[:comment_errors].present?
             .row
               .col-md-8

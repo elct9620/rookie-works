@@ -18,11 +18,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 5.0'
 
 # Front-end
-gem 'bootstrap_form', '~> 2.7'
-gem 'bootstrap-sass', '~> 3.4.1'
-gem 'ckeditor', '~> 4.2'
-gem 'jquery-rails'
-gem 'select2-rails', '~> 4.0.3'
 gem 'slim-rails'
 
 # Assets

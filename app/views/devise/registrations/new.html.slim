@@ -10,7 +10,7 @@ section.section.section-white.section-signup
             | ✻
           / p.description
           /   | No credit card required.
-          = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
             = f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: t('.email'), class: 'form-control-plain', hide_label: true
             = f.password_field :password, autocomplete: 'off', placeholder: t('.password'), class: 'form-control-plain', hide_label: true
             = f.password_field :password_confirmation, autocomplete: 'off', placeholder: t('.password_confirmation'), class: 'form-control-plain', hide_label: true

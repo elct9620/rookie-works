@@ -9,5 +9,5 @@
       .row
         .col-md-8.col-md-offset-2
           .contact-form
-            = bootstrap_form_for(@post, url: experiences_path) do |f|
+            = form_for(@post, url: experiences_path) do |f|
               = render partial: 'form', locals: { f: f }
