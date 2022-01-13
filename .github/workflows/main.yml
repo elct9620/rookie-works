@@ -36,7 +36,7 @@ jobs:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true
     - name: Run Migration
-      run: bundle exec db:migrate
+      run: bundle exec rake db:migrate
       env:
         DATABASE_URL: "postgres://postgres:postgres@localhost/postgres"
     - name: Run RSpec
