@@ -1,0 +1,59 @@
+<% keywords [@project.name, '遊戲', *@project.exhibitions.pluck(:name)] %>
+<% set_meta_tags og: { image: { _: @project.thumbnail_url(:medium), width: 860, height: 520} } %>
+<% set_meta_tags og: { video: @project.video } if @project.video.present? %>
+<section class="section section-header-blog">
+  <div class="parallax filter filter-color-black">
+    <div class="image" style="background-image: url('<%= @project.thumbnail_url %>')"></div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <h1><%= title @project.name %></h1>
+    </div>
+  </div>
+</section>
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="content-blog">
+          <% if @project.video.present? %>
+            <p><%= render @project.video_type.to_s %></p>
+          </div>
+          <% end %>
+          <%= simple_format  description(@project.description) %>
+        </div>
+      </div>
+      <div class="col-md-3 col-md-offset-1 text-center">
+        <% if @project.result.download_link.present? %>
+          <p><%= link_to t('.download'), @project.result.download_link, class: 'btn btn-fill btn-lg btn-danger' %></p>
+        <% end %>
+        <% if user_signed_in? %>
+          <p><%= bookmark_button(@project) %></p>
+        <% end %>
+        <h3 class="social-title"><%= t('.school') %></h3>
+        <p><%= @project.school.name %></p>
+        <h3 class="social-title"><%= t('.department') %></h3>
+        <p><%= @project.department.name %></p>
+        <h3 class="social-title"><%= t('.exhibitions') %></h3>
+        <%= render(partial: 'exhibition', collection: @project.exhibitions) || content_tag(:p, t('.none')) %>
+        <h3 class="social-title"><%= t('.platform') %></h3>
+        <% @project.result.platform.each do |platform| %>
+          <span class="label label-fill label-danger"><%= t("game.platform.#{platform}") %></span>&nbsp;
+        <% end %>
+        <h3 class="social-title"><%= t('.genre') %></h3>
+        <p><%= t("game.genre.#{@project.result.genre}") %></p>
+        <h3 class="social-title"><%= t('.links') %></h3>
+        <div class="social-buttons-blog-posts">
+          <%= link_to escape_once(@project.website), class: 'btn btn-social btn-simple btn-padding' do %>
+            <i class="fa fa-home"></i>
+          <% end %>
+        </div>
+        <p>
+          <div class="fb-share-button" data-href="#{original_url}" data-layout="button_count"></div>
+          &nbsp;
+          <div class="fb-like" data-href="#{original_url}" data-layout="button_count" data-action="like" data-show-faces="true"></div>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
