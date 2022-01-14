@@ -1,5 +1,5 @@
-#fb-root[data-turbolinks-permanent]
-javascript:
+<div id="fb-root" data-turbolinks-permanent></div>
+<script>
   window.fbAsyncInit = function() {
     FB.init({
       // TODO: Move APP ID to config file
@@ -17,3 +17,4 @@ javascript:
      js.src = "https://connect.facebook.net/zh_TW/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+</script>

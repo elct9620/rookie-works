@@ -1,0 +1,30 @@
+<%= nav_wrapper do %>
+  <div class="container">
+    <div class="navbar-header">
+      <button id="menu-toggle" class="navbar-toggle" type="button" data-toggle="collapse" data-target="#example">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar bar1"></span>
+        <span class="icon-bar bar2"></span>
+        <span class="icon-bar bar3"></span>
+      </button>
+      <%= link_to t('site_name'), root_path, class: 'navbar-brand' %>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right navbar-uppercase">
+        <%= nav_link t('.experience'), experiences_path %>
+        <% nav_items(guest: true) do %>
+          <%= nav_link t('shared.nav.signin'), new_user_session_path %>
+          <%= nav_link t('shared.nav.signup'), new_user_registration_path %>
+        <% end %>
+        <% nav_items do %>
+          <%= nav_link t('shared.nav.bookmarks'), bookmarks_path %>
+          <%= nav_link t('shared.nav.projects'), projects_path %>
+          <%= nav_link t('shared.nav.profile'), edit_user_registration_path %>
+          <%= nav_link t('shared.nav.signout'),  destroy_user_session_path, method: :delete %>
+          <%= nav_link t('shared.nav.submit_experience'), new_experience_path, class: 'btn btn-danger btn-fill' %>
+        <% end %>
+        <%= nav_link t('.submit'), new_game_path, class: 'btn btn-danger btn-fill' %>
+      </ul>
+    </div>
+  </div>
+<% end %>
