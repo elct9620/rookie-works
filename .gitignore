@@ -43,3 +43,6 @@ yarn-debug.log*
 /config/master.key
 
 /config/credentials/production.key
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
