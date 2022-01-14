@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <%= seo_tags %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&amp;display=swap" rel="stylesheet" />
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <%= render 'shared/tag_manager_noscript' %>
+    <%= render 'shared/nav' unless fullscreen? %>
+    <%= yield %>
+    <%= render 'shared/footer' unless fullscreen? %>
+    <%= render 'shared/tag_manager' %>
+    <%= render 'shared/facebook' %>
+    <%= javascript_include_tag '//use.fontawesome.com/releases/v5.0.8/js/all.js' %>
+  </body>
+</html>
