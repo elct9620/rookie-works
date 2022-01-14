@@ -1,0 +1,31 @@
+<div id="comment-form" class="section">
+  <div class="container">
+    <div class="contact-form">
+      <% if user_signed_in? %>
+        <%= form_for([@post, @comment], remote: true) do |f| %>
+          <% if flash[:comment_errors].present? %>
+            <div class="row">
+              <div class="col-md-8">
+                <% flash[:comment_errors].each do |key, value| %>
+                  <div class="alert alert-danger"><%= t("activerecord.attributes.comment.#{key}") %><%= value.first %></div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+          <div class="row">
+            <div class="col-md-8">
+              <%= f.text_area :content, rows: 8, placeholder: t('.leave_your_comment'), hide_label: true %>
+              <%= f.submit t('.comment'), class: 'btn btn-danger btn-fill pull-right' %>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="row">
+          <div class="col-md-8">
+            <%= sanitize t('.signin_before_comment', signin: link_to(t('shared.nav.signin'), new_user_session_path)) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

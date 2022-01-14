@@ -1,0 +1,59 @@
+<% set_meta_tags og: { image: { _: @post.thumbnail_url(:medium), width: 860, height: 520} } %>
+<section class="section section-header-blog">
+  <div class="parallax filter filter-color-black">
+    <div class="image" style="background-image: url('<%= @post.thumbnail_url %>')"></div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <h1><%= title @post.title %>
+      </h1>
+    </div>
+  </div>
+</section>
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="content-blog">
+          <%= simple_format description(@post.content) %>
+        </div>
+      </div>
+      <div class="col-md-3 col-md-offset-1 text-center">
+        <% if current_user == @post.user %>
+        <p>
+          <%= link_to t('.edit'), edit_experience_path(@post), class: 'btn btn-fill btn-lg btn-danger' %>
+        </p>
+      <% end %>
+      <h3 class="social-title"><%= t('.author') %></h3>
+      <div class="author">
+        <div class="avatar avatar-danger">
+          <%= image_tag @post.user.avatar_url %>
+        </div>
+      </div>
+      <div class="description text-center">
+        <h3 class="big-text"><%= @post.user.name %></h3>
+        <p class="small-text"><%= @post.user.team %></p>
+      </div>
+      <p>
+        <div class="fb-share-button" data-href="<%= original_url %>" data-layout="button_count"></div>
+        &nbsp;
+        <div class="fb-like" data-action="like" data-href="<%= original_url %>" data-layout="button_count" data-show-faces="true"></div>
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+<div class="section">
+  <div class="container">
+    <h3><%= t('.comments') %></h3>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="media-area">
+          <%= render partial: 'comments/comment', collection: @comments %>
+        </div>
+        <%= paginate @comments %>
+      </div>
+    </div>
+  </div>
+  <%= render 'comment_form' %>
+</div>

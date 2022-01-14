@@ -1,0 +1,15 @@
+<% content_for :title, t('.page_name') %>
+<% title t('.page_name') %>
+<% content_for :subtitle, t('.description') %>
+
+<%= render 'shared/page_header' %>
+<div class="section section-blog-horizontal">
+  <div class="container">
+    <%= render(partial: 'post', collection: @posts) || render('empty_list') %>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <%= paginate @posts %>
+      </div>
+    </div>
+  </div>
+</div>
