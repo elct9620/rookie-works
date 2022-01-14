@@ -1,0 +1,22 @@
+<div class="contact-form">
+  <%= form_for(@game) do |gf| %>
+    <%= gf.fields_for :project do |f| %>
+      <%# TODO: Display :department errors %>
+      <%= f.text_field :name, class: 'form-control-plain', autofocus: true %>
+      <%= f.text_area :description, class: 'rich' %>
+      <%= f.select :published_year, Project.available_years, {}, class: 'select2' %>
+      <%= f.collection_select :school_id, School.all, :id, :name, {}, { class: 'select2' } %>
+      <%= f.collection_select :department_id, Department.all, :id, :name, {}, { class: 'select2' } %>
+      <%= f.collection_check_boxes :exhibition_ids, Exhibition.all, :id, :name_with_year %>
+      <%= f.text_field :website, class: 'form-control-plain' %>
+      <%= f.text_field :video, class: 'form-control-plain' %>
+      <%= f.file_field :thumbnail %>
+    <% end %>
+    <%= gf.select :platform, Game::PLATFORM.keys.collect { |k| [t("game.platform.#{k}"), k] }, {}, multiple: true, class: 'select2' %>
+    <%= gf.select :genre, Game.genres.keys.collect { |k| [t("game.genre.#{k}"), k]}, {}, { class: 'select2' } %>
+    <%= gf.text_field :download_link %>
+    <div class="col-md-2 col-md-offset-5">
+      <%= gf.submit t('.submit'), class: 'btn btn-danger btn-fill' %>
+    </div>
+  <% end %>
+</div>

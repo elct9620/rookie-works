@@ -1,0 +1,17 @@
+<% content_for :nontransparent_nav, true %>
+<div class="wrapper">
+  <section class="section section-contact-form">
+    <div class="container">
+      <div class="title-area">
+        <h2><%= t('.submit_project') %></h2>
+        <div class="separator separator-danger">✻</div>
+        <p class="description"><%= t('.description') %></p>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <%= render 'form' %>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
