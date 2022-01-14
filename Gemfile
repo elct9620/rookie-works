@@ -17,7 +17,6 @@ gem 'turbolinks', '~> 5'
 
 # Front-end
 gem 'cssbundling-rails'
-gem 'slim-rails'
 
 # Assets
 gem 'carrierwave'

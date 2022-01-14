@@ -1,0 +1,50 @@
+<% keywords [@exhibition.name, t('keyword.graduation_project'), t('keyword.designer')] %>
+<% title @exhibition.name_with_year %>
+<% description t('.description', year: @exhibition.year, name: @exhibition.name) %>
+<% content_for :title, @exhibition.name_with_year %>
+<% content_for :subtitle,  t('.description', year: @exhibition.year, name: @exhibition.name) %>
+
+<%= render 'shared/page_header' %>
+<% if @exhibition.plan_image.present? %>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-area">
+            <h2><%= t('.plan_image') %>
+            </h2>
+            <div class="separator separator-danger">✻</div>
+          </div>
+          <div class="card card-blog card-plain">
+            <div class="header">
+              <%= image_tag @exhibition.plan_image_url, class: 'image-header' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title-area">
+          <h2><%= t('.projects') %>
+          </h2>
+          <div class="separator separator-danger">✻</div>
+        </div>
+      </div>
+    </div>
+    <% @projects.in_groups_of(3) do |projects| %>
+      <div class="row">
+        <%= render projects.compact, cached: true %>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <%= paginate @projects %>
+      </div>
+    </div>
+  </div>
+</div>

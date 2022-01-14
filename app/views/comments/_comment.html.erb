@@ -1,0 +1,12 @@
+<div class="media" id="comment-<%= comment.id %>">
+  <div class="avatar avatar-danger pull-left">
+    <%= image_tag comment.user.avatar_url, class: 'media-object' %>
+  </div>
+  <div class="media-body">
+    <h3 class="media-heading"><%= comment.user.name %>
+    </h3>
+    <h5 class="text-muted pull-right"><%= l comment.created_at, format: :long %>
+    </h5>
+    <%= simple_format comment.content %>
+  </div>
+</div>

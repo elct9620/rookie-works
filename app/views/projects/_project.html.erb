@@ -1,0 +1,20 @@
+<%# TODO: Add helper to switch between home/project %>
+<div class="col-md-4">
+  <div class="card card-blog">
+    <%= link_to project, class: 'header' do %>
+      = image_tag project.thumbnail_url(:thumb), class: 'image-header'
+    <% end %>
+    <div class="content">
+      <%= link_to project, class: 'card-title' do %>
+        <h3><%= project.name %></h3>
+      <% end %>
+      <h6 class="card-category text-warning"><%= "#{project.school.name} #{project.department.name}" %></h6>
+      <% if params[:controller] == 'projects' %>
+        <div class="line-divider line-danger">
+          <%= link_to t('.edit'), edit_game_path(project.result), class: 'btn btn-small btn-info btn-fill' %>
+          &nbsp;
+          <%= link_to t('.destroy'), game_path(project.result), class: 'btn btn-small btn-danger btn-fill', method: :delete %>
+      <% end %>
+    </div>
+  </div>
+</div>
