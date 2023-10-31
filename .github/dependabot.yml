@@ -5,11 +5,11 @@
 
 version: 2
 updates:
-  - package-ecosystem: "gem"
+  - package-ecosystem: "bundler"
     directory: "/"
     schedule:
       interval: "weekly"
-  - package-ecosystem: "yarn"
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
