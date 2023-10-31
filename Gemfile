@@ -62,7 +62,7 @@ group :development, :test do
   gem 'brakeman'
   gem 'bundler-audit'
   gem 'overcommit'
-  gem 'rubocop', '~> 1.24.0', require: false
+  gem 'rubocop', '~> 1.57.2', require: false
   gem 'rubocop-performance'
   gem 'rubocop-rails'
 end
