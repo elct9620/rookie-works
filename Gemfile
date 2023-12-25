@@ -8,7 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 # Rails Builtin
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.20'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 6.4'
 gem 'rails', '~> 6.1.7'
