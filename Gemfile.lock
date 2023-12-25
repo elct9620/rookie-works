@@ -80,7 +80,8 @@ GEM
     boxing (0.6.4)
       bundler (~> 2.0)
       thor (~> 1.0)
-    brakeman (6.0.1)
+    brakeman (6.1.1)
+      racc
     builder (3.2.4)
     bundler-audit (0.9.1)
       bundler (>= 1.2.0, < 3)
