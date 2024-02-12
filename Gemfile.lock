@@ -196,7 +196,7 @@ GEM
     mini_magick (4.12.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.5)
-    minitest (5.21.2)
+    minitest (5.22.2)
     multi_json (1.15.0)
     multi_xml (0.6.0)
     net-imap (0.4.9.1)
@@ -209,7 +209,7 @@ GEM
     net-smtp (0.4.0)
       net-protocol
     nio4r (2.7.0)
-    nokogiri (1.16.0)
+    nokogiri (1.16.2)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     oauth2 (1.4.9)
@@ -276,7 +276,7 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
-    rails-i18n (7.0.3)
+    rails-i18n (7.0.8)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 8)
     railties (7.0.8)
@@ -394,7 +394,7 @@ GEM
     websocket-extensions (0.1.5)
     whenever (1.0.0)
       chronic (>= 0.6.3)
-    zeitwerk (2.6.12)
+    zeitwerk (2.6.13)
 
 PLATFORMS
   ruby
