@@ -108,7 +108,7 @@ GEM
     crass (1.0.6)
     cssbundling-rails (1.1.0)
       railties (>= 6.0.0)
-    database_rewinder (0.9.9)
+    database_rewinder (1.0.0)
     date (3.3.4)
     devise (4.9.3)
       bcrypt (~> 3.0)
