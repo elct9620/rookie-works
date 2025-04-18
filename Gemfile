@@ -11,7 +11,7 @@ end
 gem 'bcrypt', '~> 3.1.20'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 6.4'
-gem 'rails', '~> 7.0.8'
+gem 'rails', '~> 7.1.3'
 gem 'sassc-rails'
 gem 'turbolinks', '~> 5'
 
